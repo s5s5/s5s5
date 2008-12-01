@@ -1,0 +1,1797 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="zh"><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="vBulletin 3.0.1">
+<meta name="keywords" content="DreamLand dream4ever DRL EDL EDS">
+<meta name="description" content="Our DreamLand."><!-- CSS Stylesheet -->
+
+
+<link rel="stylesheet" type="text/css" href="svnfiles/style-bedc75ce-00003.css"><!-- / CSS Stylesheet -->
+
+
+
+<script type="text/javascript">
+<!--
+var SESSIONURL = "";
+var IMGDIR_MISC = "images/drl2/misc";
+// -->
+</script>
+
+<script type="text/javascript" src="svnfiles/vbulletin_global.js"></script>
+<script type="text/javascript" src="svnfiles/vbulletin_menu.js"></script><!--[if IE]>
+<style type="text/css">
+span.hiddenstuff { display: none; }
+</style>
+<script type="text/javascript" for="hiddenstuff" event="onmouseover">
+event.srcElement.childNodes[1].style.display="inline";
+</script>
+<script type="text/javascript" for="hiddenstuff" event="onmouseout">
+event.srcElement.childNodes[1].style.display="none";
+</script>
+<![endif]--><!-- set up CSS for the editor -->
+
+
+		
+		<link rel="stylesheet" type="text/css" href="svnfiles/vbulletin_editor.css">
+		<style type="text/css">
+		<!--
+		#vBulletin_editor {
+			background: #E1E7EC;
+			padding: 4px;
+		}
+		#controlbar, .controlbar {
+			background: #E1E7EC;
+		}
+		.imagebutton {
+			background: #E1E7EC;
+			color: #1E375A;
+			padding: 1px;
+			border: none;
+		}
+		-->
+		</style><title>DreamLand - 【原创】用subversion(SVN)进行版本管理</title></head><body onload="toggle_quote_onload(); if (is_ie || is_moz) { fetch_object('currentPost').scrollIntoView(!is_moz); } editInit();">
+<!-- logo -->
+<a name="top"></a>
+<table align="center" bgcolor="#e0e6ec" border="0" cellpadding="0" cellspacing="0" width="95%"><tbody><tr><td>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td><img src="svnfiles/c.gif" border="0" height="10" width="10"></td></tr>
+</tbody></table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td rowspan="3" width="8"><img src="svnfiles/h_l.gif" border="0" height="97" width="8"></td>
+<td colspan="2" background="DreamLand%20-%20%A1%BE%D4%AD%B4%B4%A1%BF%D3%C3subversion(SVN)%BD%F8%D0%D0%B0%E6%B1%BE%B9%DC%C0%ED_files/h_t.gif"><img src="svnfiles/c.gif" border="0" height="3" width="3"></td>
+<td rowspan="3" width="8"><img src="svnfiles/h_r.gif" border="0" height="97" width="8"></td></tr>
+<tr><td background="DreamLand%20-%20%A1%BE%D4%AD%B4%B4%A1%BF%D3%C3subversion(SVN)%BD%F8%D0%D0%B0%E6%B1%BE%B9%DC%C0%ED_files/h_back.gif"><a href="https://bbs.dreamz.org/index.php?s=" accesskey="="><img src="svnfiles/h_logo_2006.gif" border="0" height="91" width="400"></a></td>
+<td background="DreamLand%20-%20%A1%BE%D4%AD%B4%B4%A1%BF%D3%C3subversion(SVN)%BD%F8%D0%D0%B0%E6%B1%BE%B9%DC%C0%ED_files/h_back.gif" width="473">
+	<table border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr><td><img src="svnfiles/h_banner_l.gif" border="0" height="5" width="467"></td></tr>
+	<tr><td><img src="svnfiles/c.gif" border="0" height="8" width="8"></td></tr>
+	<tr><td><a href="https://bbs.dreamz.org/" accesskey="-"><img src="svnfiles/drl_year2006.gif" border="0" height="60" width="468"></a></td></tr>
+	</tbody></table>
+</td></tr>
+<tr><td colspan="2" background="DreamLand%20-%20%A1%BE%D4%AD%B4%B4%A1%BF%D3%C3subversion(SVN)%BD%F8%D0%D0%B0%E6%B1%BE%B9%DC%C0%ED_files/h_b.gif"><img src="svnfiles/c.gif" border="0" height="3" width="3"></td></tr>
+</tbody></table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td><img src="svnfiles/c.gif" border="0" height="10" width="10"></td></tr>
+</tbody></table>
+
+
+<!-- nav buttons bar -->
+<div align="center">
+	<table class="tborder" style="border-top-width: 0px;" align="center" bgcolor="#dae9ff" border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr align="center"><td width="8"><img src="svnfiles/nbb1.gif" border="0" height="32" width="8"></td>	
+		
+			<td class="vbmenu_header"><a href="https://bbs.dreamz.org/usercp.php?">控制面板</a></td>
+		
+		
+		<td class="vbmenu_header"><a href="https://bbs.dreamz.org/faq.php?" accesskey="5">帮助</a></td>
+		<td class="vbmenu_header"><a href="https://bbs.dreamz.org/memberlist.php?">会员列表</a></td>
+		<td class="vbmenu_header"><a href="https://bbs.dreamz.org/calendar.php?" accesskey="6">日历</a></td>
+				
+			
+				
+				<td class="vbmenu_header"><a href="https://bbs.dreamz.org/search.php?do=getnew" accesskey="2">查看新帖</a></td>
+				
+				<td style="cursor: pointer;" id="navbar_search" class="vbmenu_header"><a href="https://bbs.dreamz.org/search.php?" accesskey="4">搜索</a> <script type="text/javascript"> vbmenu_register("navbar_search"); </script><img src="svnfiles/menu_open.gif" alt="" border="0"></td>
+			
+			
+				<td style="cursor: pointer;" id="usercptools" class="vbmenu_header"><a href="#usercptools">快速链接</a> <script type="text/javascript"> vbmenu_register("usercptools"); </script><img src="svnfiles/menu_open.gif" alt="" border="0"></td>		
+			
+		
+		
+			<td class="vbmenu_header"><a href="https://bbs.dreamz.org/login.php?do=logout&amp;u=3402" onclick="return log_out()" accesskey="0">退出</a></td>
+		
+	<td width="8"><img src="svnfiles/nbb2.gif" border="0" height="32" width="8"></td>
+	</tr>
+	</tbody></table>
+</div>
+<!-- / nav buttons bar -->
+<!-- /logo -->
+<!--Private Message Popup-->
+
+<!--/Private Message Popup-->
+<!--Modlist Jumppage-->
+<script>
+<!--
+function jumpPage(newLoc)
+{
+	newPage=newLoc.options[newLoc.selectedIndex].value;
+	if(newPage!="")window.location.href=newPage;
+}
+zz=0;
+function zoom(o){if(!zz)return true;var zoom=parseInt(o.style.zoom,10)||100;zoom+=event.wheelDelta/12;if(zoom>0)o.style.zoom=zoom+'%';return false;}
+// -->
+</script>
+<!--/Modlist Jumppage-->
+
+<!--DoubleClick To Clipboard-->
+<script>
+<!--
+function copy_clip(ID)
+{
+ meintext=ID.innerHTML;
+
+ if (window.clipboardData) 
+   {
+    window.clipboardData.setData("Text", meintext);
+   }
+   else if (window.netscape) 
+   { 
+   netscape.security.PrivilegeManager.enablePrivilege('UniversalXPConnect');
+   var clip = Components.classes['@mozilla.org/widget/clipboard;1'].createInstance(Components.interfaces.nsIClipboard);
+   if (!clip) return;
+   var trans = Components.classes['@mozilla.org/widget/transferable;1'].createInstance(Components.interfaces.nsITransferable);
+   if (!trans) return;
+   trans.addDataFlavor('text/unicode');
+   var str = new Object();
+   var len = new Object();
+   var str = Components.classes["@mozilla.org/supports-string;1"].createInstance(Components.interfaces.nsISupportsString);
+   var copytext=meintext;
+   str.data=copytext;
+   trans.setTransferData("text/unicode",str,copytext.length*2);
+   var clipid=Components.interfaces.nsIClipboard;
+   if (!clip) return false;
+   clip.setData(trans,null,clipid.kGlobalClipboard);
+   }
+   return false;
+}
+//-->
+</script>      
+<!--/DoubleClick To Clipboard-->
+
+<!-- content table -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width: 100%; text-align: left;">
+			<div style="padding: 0px;">
+
+
+
+<script type="text/javascript">
+<!--
+function log_out()
+{
+	ht = document.getElementsByTagName("html");
+	ht[0].style.filter = "progid:DXImageTransform.Microsoft.BasicImage(grayscale=1)";
+	if (confirm('确实想退出论坛？'))
+	{
+		return true;
+	}
+	else
+	{
+		ht[0].style.filter = "";
+		return false;
+	}
+}
+//-->
+</script>
+<!-- breadcrumb, login, pm info -->
+<table class="tborder" align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+	<td width="8"><img src="svnfiles/nbb3.gif" border="0" height="65" width="8"></td>
+	<td style="background-position: left top; background-repeat: repeat-x;" background="DreamLand%20-%20%A1%BE%D4%AD%B4%B4%A1%BF%D3%C3subversion(SVN)%BD%F8%D0%D0%B0%E6%B1%BE%B9%DC%C0%ED_files/nbb5.gif" nowrap="nowrap" width="100%">
+		
+			<table border="0" cellpadding="0" cellspacing="0">
+			<tbody><tr valign="bottom">
+				<td><a href="#" onclick="history.back(1)"><img title="返回" src="svnfiles/navbits_start.gif" alt="返回" border="0"></a></td>
+				<td>&nbsp;</td>
+				<td width="100%"><span class="navbar"><a href="https://bbs.dreamz.org/index.php?" accesskey="1">DreamLand</a></span> 
+	<span class="navbar">&gt; <a href="https://bbs.dreamz.org/forumdisplay.php?f=6">【电脑技术】</a></span>
+
+
+	<span class="navbar">&gt; <a href="https://bbs.dreamz.org/forumdisplay.php?f=7">〖软件使用〗</a></span>
+
+</td>
+			</tr>
+			<tr>
+				<td class="navbar" style="font-size: 10pt; padding-top: 1px;" colspan="3"><a href="https://bbs.dreamz.org/showthread.php?p=747167"><img title="刷新本页" class="inlineimg" src="svnfiles/navbits_finallink.gif" alt="刷新本页" border="0"></a> <strong>
+	【原创】用subversion(SVN)进行版本管理
+
+</strong></td>
+			</tr>
+			</tbody></table>			
+		
+	</td>	
+	
+	
+	
+		<td style="background-position: left top; background-repeat: repeat-x;" background="DreamLand%20-%20%A1%BE%D4%AD%B4%B4%A1%BF%D3%C3subversion(SVN)%BD%F8%D0%D0%B0%E6%B1%BE%B9%DC%C0%ED_files/nbb5.gif" nowrap="nowrap">
+		<div class="navbar">
+			<!--<span style="float:right">[<a href="login.php?do=logout" onclick="return log_out()">退出</a>]</span>-->
+			<strong>欢迎回来, upig.</strong><br>
+			你上次访问时间是: 今天 <span class="time">15:25</span>
+			<br><a href="https://bbs.dreamz.org/private.php?">悄悄话</a>: 未读 0, 总计 19.
+		</div>
+		</td>
+		
+		
+	<td width="8"><img src="svnfiles/nbb4.gif" border="0" height="65" width="8"></td>
+
+</tr>
+</tbody></table>
+<!-- / breadcrumb, login, pm info -->
+
+<!-- NAVBAR POPUP MENUS -->
+	
+	
+	<!-- header quick search form -->
+	<div class="vbmenu_popup" id="navbar_search_menu" style="display: none; position: absolute; left: 0px; top: 0px;">
+		<table border="0" cellpadding="4" cellspacing="1" width="">
+		<tbody><tr>
+			<td class="thead">搜索论坛</td>
+		</tr>
+		<tr>
+			<td style="cursor: default;" class="vbmenu_option" title="">
+			<form action="search.php" method="post">
+				<input name="do" value="process" type="hidden">
+				<input name="showposts" value="0" type="hidden">
+				<input class="bginput" name="query" size="20" maxlength="30" type="text"><!-- go button -->
+<input class="button" value="Go" type="submit"><br>
+			</form>
+			</td>
+		</tr>
+		<tr>
+			<td style="cursor: default;" class="vbmenu_option"><a href="https://bbs.dreamz.org/search.php?" accesskey="4">高级搜索</a></td>
+		</tr>
+		<tr>
+			<td style="cursor: default;" class="vbmenu_option"><a href="https://bbs.dreamz.org/search.php?do=getnew" accesskey="2">查看新帖</a></td>
+		</tr>
+		<tr>
+			<td style="cursor: default;" class="vbmenu_option"><a href="https://bbs.dreamz.org/search.php?do=getdaily" accesskey="7">今日新帖</a></td>
+		</tr>
+		<tr>
+			<td style="cursor: default;" class="vbmenu_option"><a href="https://bbs.dreamz.org/search.php?do=finduser&amp;userid=3402" accesskey="8">我的帖子</a></td>
+		</tr>
+		<tr>
+			<td style="cursor: default;" class="vbmenu_option"><a href="https://bbs.dreamz.org/search.php?do=process&amp;showposts=0&amp;starteronly=1&amp;exactname=1&amp;searchuser=upig" accesskey="9">我的主题</a></td>
+		</tr>
+
+		</tbody></table>
+	</div>
+	<!-- / header quick search form -->
+	
+
+	
+	<!-- user cp tools menu -->
+	<div class="vbmenu_popup" id="usercptools_menu" style="display: none; position: absolute; left: 0px; top: 0px;">
+		<table border="0" cellpadding="4" cellspacing="1" width="">
+		
+		<tbody><tr><td class="thead">快速链接</td></tr>		
+		<tr><td style="cursor: default;" class="vbmenu_option"><a href="https://bbs.dreamz.org/search.php?do=getnew">查看新帖</a></td></tr>
+		<tr><td style="cursor: default;" class="vbmenu_option"><a href="https://bbs.dreamz.org/forumdisplay.php?do=markread">标记所有论坛为已读</a></td></tr>
+		<tr><td style="cursor: default;" class="vbmenu_option"><a href="#" onclick="window.open('misc.php?do=buddylist&focus=1','buddylist','statusbar=no,menubar=no,toolbar=no,scrollbars=yes,resizable=yes,width=250,height=300'); return false;">好友名单</a></td></tr>
+				
+		<tr><td class="thead"><a href="https://bbs.dreamz.org/usercp.php?">用户控制面板</a></td></tr>
+		<tr><td style="cursor: default;" class="vbmenu_option"><a href="https://bbs.dreamz.org/profile.php?do=editsignature">编辑个人签名</a></td></tr>
+		<tr><td style="cursor: default;" class="vbmenu_option"><a href="https://bbs.dreamz.org/profile.php?do=editavatar">编辑头像</a></td></tr>
+		<tr><td style="cursor: default;" class="vbmenu_option"><a href="https://bbs.dreamz.org/profile.php?do=editprofile">编辑个人资料</a></td></tr>
+		<tr><td style="cursor: default;" class="vbmenu_option"><a href="https://bbs.dreamz.org/profile.php?do=editoptions">编辑选项</a></td></tr>
+		
+		<tr><td class="thead">其它</td></tr>
+		<tr><td style="cursor: default;" class="vbmenu_option"><a href="https://bbs.dreamz.org/private.php?">悄悄话</a></td></tr>
+		<tr><td style="cursor: default;" class="vbmenu_option"><a href="https://bbs.dreamz.org/subscription.php?">订阅的主题</a></td></tr>
+		<tr><td style="cursor: default;" class="vbmenu_option"><a href="https://bbs.dreamz.org/member.php?u=3402">我的资料</a></td></tr>
+		<tr><td style="cursor: default;" class="vbmenu_option"><a href="https://bbs.dreamz.org/online.php?">用户在线状态</a></td></tr>
+		<tr><td style="cursor: default;" class="vbmenu_option"><a href="https://bbs.dreamz.org/reputation.php?do=display">声望监督系统</a></td></tr>
+		<tr><td style="cursor: default;" class="vbmenu_option"><a href="https://bbs.dreamz.org/x.php?">DRL-X</a></td></tr>
+		</tbody></table>
+	</div>
+	<!-- / user cp tools menu -->
+	
+<!-- / NAVBAR POPUP MENUS -->
+
+<br>
+
+
+
+<a name="poststop" id="poststop"></a>
+
+<!-- controls above postbits -->
+<table style="margin-bottom: 3px;" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+	
+		<td class="smallfont"><a href="https://bbs.dreamz.org/newreply.php?do=newreply&amp;noquote=1&amp;p=747167"><img title="回复" src="svnfiles/reply.gif" alt="回复" border="0"></a></td>
+		
+	
+</tr>
+</tbody></table>
+<!-- / controls above postbits -->
+
+<!-- toolbar -->
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr>
+		<td colspan="5"><table cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td><img src="svnfiles/corner_left.gif" alt="" border="0"></td>
+
+	<td class="tcat" width="100%">
+		<div class="smallfont">
+		
+		&nbsp;
+		</div>
+	</td>
+	<td style="cursor: pointer;" class="vbmenu_control" id="threadtools" nowrap="nowrap">
+		<a href="#goto_threadtools">主题工具</a>
+		<script type="text/javascript"> vbmenu_register("threadtools"); </script><img src="svnfiles/menu_open.gif" alt="" border="0">
+	</td>
+	
+		<td style="cursor: pointer;" class="vbmenu_control" id="threadsearch" nowrap="nowrap">
+			<a href="#goto_threadsearch">在此主题中搜索</a>
+			<script type="text/javascript"> vbmenu_register("threadsearch"); </script><img src="svnfiles/menu_open.gif" alt="" border="0">
+		</td>
+	
+	
+		<td style="cursor: pointer;" class="vbmenu_control" id="threadrating" nowrap="nowrap">
+			<a href="#goto_threadrating">主题评分</a>
+			<script type="text/javascript"> vbmenu_register("threadrating"); </script><img src="svnfiles/menu_open.gif" alt="" border="0">
+		</td>
+	
+	
+	<td style="cursor: pointer;" class="vbmenu_control" id="displaymodes" nowrap="nowrap">
+		<a href="#goto_displaymodes">显示模式</a>
+		<script type="text/javascript"> vbmenu_register("displaymodes"); </script><img src="svnfiles/menu_open.gif" alt="" border="0">
+	</td>
+	
+
+<td><img src="svnfiles/corner_right.gif" alt="" border="0"></td>
+</tr>
+</tbody></table>
+
+</td></tr>
+</tbody></table>
+<!-- / toolbar -->
+
+<!-- end content table -->
+
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / end content table -->
+
+
+
+<div id="posts"><!-- post #747167 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width: 100%; text-align: left;">
+			<div style="padding: 0px;">
+<div style="padding: 0px 0px 4px;">
+
+<table class="tborder" style="border: 1px solid rgb(86, 112, 147);" align="center" border="0" cellpadding="4" cellspacing="0" width="100%">
+<tbody><tr>
+	<td class="thead" style="font-weight: normal;" id="currentPost" width="175">		
+			<!-- status icon and date -->
+			<a name="post747167"><img title="旧的" class="inlineimg" src="svnfiles/post_old.gif" alt="旧的" border="0"></a>
+			
+				今天, 11:53
+			
+			
+			<!-- / status icon and date -->				
+	</td>
+	<td class="thead" style="font-weight: normal;" align="right">
+		&nbsp;
+		#<a href="https://bbs.dreamz.org/showpost.php?p=747167&amp;postcount=1" target="new"><strong>1</strong></a>
+	</td>
+</tr>
+<tr valign="top">
+	<td class="alt2" rowspan="3" nowrap="nowrap" width="175">
+			
+			<div style="cursor: pointer;" width="175" id="postmenu_747167">
+				
+				<a class="bigusername" href="https://bbs.dreamz.org/member.php?u=3402">upig</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_747167", true); </script>
+				
+			</div>
+			<br>
+			
+				<div width="175" class="smallfont" align="center">
+					<a href="https://bbs.dreamz.org/member.php?u=3402"><img title="upig的头像" src="svnfiles/avatar3402_8.gif" alt="upig的头像" border="0"></a>
+				</div>
+			
+			<div width="175" class="smallfont" align="center">普通会员</div>
+			<div width="175" class="smallfont" align="center"><img src="svnfiles/stars04.gif" alt="" border="0"></div>
+		
+			
+			<div width="175" class="smallfont">
+				&nbsp;<br>
+				<fieldset style="padding: 5px;"><legend>资 料:</legend>
+				<div>注册日期: Oct 2005</div>
+				<div>来自: 长沙</div>
+				
+				<div>
+					帖子: 219
+					<img title="upig 不日成名" class="inlineimg" src="svnfiles/reputation_pos.gif" alt="upig 不日成名" border="0">
+				</div>
+				</fieldset>
+			</div>					
+		
+	</td>
+	<td class="alt1">
+	
+		
+			<!-- icon and title -->
+                        <table id="table1" border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <tbody><tr><td>
+			<div class="smallfont">
+				<img title="默认" class="inlineimg" src="svnfiles/icon1.gif" alt="默认" border="0">
+				<strong>【原创】用subversion(SVN)进行版本管理</strong>
+			</div>
+			</td>
+			<td align="right"><div>  <a href="#" onclick="return imwindow('msn', '3402', 400, 200)"><img title="使用MSN给 upig 发送一个信息" src="svnfiles/im_msn.gif" alt="使用MSN给 upig 发送一个信息" border="0"></a> 
+			
+<img title="upig在线" class="inlineimg" src="svnfiles/user_online.gif" alt="upig在线" border="0">
+
+			<a href="#" onclick="return reputation(747167)"><img title="改变 upig 的声望" class="inlineimg" src="svnfiles/reputation.gif" alt="改变 upig 的声望" border="0"></a>
+			
+			
+			&nbsp;</div>
+			</td></tr>
+			</tbody></table>
+			<hr style="color: rgb(143, 160, 176);" size="1">
+			<!-- / icon and title -->
+		
+		
+		<!-- message -->
+		<div>老是给别人讲svn，花时间太多，近来无事，就写了subversion的版本管理技巧，基本的没多讲，只捡重要的写了一下，以便一劳永逸，希望有用。<img src="svnfiles/dft009.gif" alt="" title="Smile" class="inlineimg" border="0"><br>
+<br>
+好难编辑，终于搞完了...<br>
+<br>
+<b><font color="Blue">版本管理约定</font></b><br>
+<br>
+程序员编写程序的过程中，每个程序都会有很多不同的版本，这就需要程序员很好的管理代码，在需要的时间可以取出需要的版本，并且每个版本都有一个完整的说明。<br>
+<br>
+我们使用Sub Version（简称SVN）作为版本管理工具。这里着重介绍SVN作为跨平台的多人协作使用方法。在多个程序员管理同一段代码的过程中，版本的管理显得尤为重要，使用SVN可以方便的进行分支、合并，记录下所有的版本。<br>
+<br>
+<b><font color="Blue">SVN基本配置</font></b><br>
+在开始某项软件、文档的开发与撰写时，首先由配置管理负责人建立SVN仓库、用户名及其权限，并通知相关人员SVN仓库地址、SVN仓库负责人。<br>
+<br>
+<font color="Blue">配置强制注释</font><br>
+SVN仓库的负责人把工程的tsvn:logminisize设置为1，以便强制注释。设置方法：在你的工程文件夹右键-&gt;属性中，进入
+Subversion标签，选中tsvn:
+logminisize，确保复选框recursive选中，然后点击Set按钮把它的值设为1，其意思是指提交的注释最短长度为一个字。如图：<br>
+<a href="https://bbs.dreamz.org/attachment.php?attachmentid=140180&amp;stc=1" target="_blank"><img class="attach" src="svnfiles/attachment_010.png" alt="" border="0"></a>
+<br><br>
+<br>
+<font color="Blue">SVN软件配置</font><br>
+<br>
+1.忽略文件<br>
+在SVN 的[Setting]的[General]中，设置需要忽略的文件以便忽略掉一些临时的、无用的文件，常被忽略的文件有*.opt
+*.ncb *.suo *.plg *.pch *.idb *.pdb *.scc *.obj Debug Release *.o *.bin
+*.out *.ilk *.aps debug release *.clw
+*.bak。每个程序员可以根据自己的需要进行修改忽略文件，上面只是使用VC++与Tornado编程时常用的一些忽略文件。<br>
+<a href="https://bbs.dreamz.org/attachment.php?attachmentid=140181&amp;stc=1" target="_blank"><img class="attach" src="svnfiles/attachment_012.png" alt="" border="0"></a>
+<br><br>
+<br>
+2.合并比较工具<br>
+在Merge Tool中可以选择用来合并的工具，强烈推荐用Araxis
+Merge。在[Setting]-&gt;[Diff]中填入"C:\Program Files\Araxis\Araxis Merge
+v6.5\Merge.exe"；在[Setting]-&gt;[Merge]的选项中，填入"C:\Program
+Files\Araxis\Araxis Merge v6.5\Merge.exe" %theirs %mine %merged
+；其中"C:\Program Files\Araxis\Araxis Merge
+v6.5\Merge.exe"是指合并工具的路径，%theirs %mine
+%merged分别指..将要合并到主干的分支，主干，及合并后的结果。<br>
+<a href="https://bbs.dreamz.org/attachment.php?attachmentid=140182&amp;stc=1" target="_blank"><img class="attach" src="svnfiles/attachment_003.png" alt="" border="0"></a>
+<br><br>
+<br>
+<font color="Blue">SVN仓库目录结构</font><br>
+SVN仓库的负责人规划好仓库的目录结构。推荐的目录结构如下图所示。<br>
+<br>
+仓库的一级目录只有两个，分别为code和doc。其中，doc主要用来放置先期的文档，code主要用来放置工程的代码，也可以包含后期的文档。<br>
+<br>
+仓库的二级目录只可以是branch与trunk两个目录，分别存放主干与分支。trunk目录下直接存放工程文件。branch目录下包括一些子目录分别对应各个分支。<br>
+<a href="https://bbs.dreamz.org/attachment.php?attachmentid=140183&amp;stc=1" target="_blank"><img class="attach" src="svnfiles/attachment_008.png" alt="" border="0"></a>
+<br><br>
+<br>
+<font color="Blue">本地目录结构</font><br>
+从SVN仓库中取出代码时，一定不要把整个仓库取出来，而应该只取出trunk目录，或只取出branch下的某个分支目录（比如上图中的svn:\\code\branch\xw_051206）。<br>
+<br>
+<br>
+<b><font color="Blue">合作开发方法</font></b><br>
+<br>
+<font color="Blue">合作开发基本流程</font><br>
+一个项目会有多个人共同合作开发完成。基本流程是：<ul><li>各开发成员建立自己的分支，并在此分支上开发</li><li>各开发成员把分支合并到主干上并形成较为稳定</li><li>各个成员重新从主干上建立新的分支，在此分支上开发(即回到第一步)</li><li>循环往复，直到工程结束。</li></ul><br>
+下面我用一个例子来说明合作开发的基本流程。<br>
+现在xb与lzj两个开发人员要共同开发一个工程onlytest，其这个工程的主干的SVN仓库地址如下图。<br>
+<a href="https://bbs.dreamz.org/attachment.php?attachmentid=140184&amp;stc=1" target="_blank"><img class="attach" src="svnfiles/attachment_007.png" alt="" border="0"></a>
+<br></div>
+		<!-- / message -->
+	
+		
+		<!-- attachments -->
+			<div style="padding: 4px;">
+			
+			
+			
+			
+		
+			
+			
+			
+				<fieldset class="fieldset">
+					<legend>所上传图片</legend>
+					<table border="0" cellpadding="0" cellspacing="3">
+					<tbody><tr>
+	<td><img title="文件类型: png" class="inlineimg" src="svnfiles/png.gif" alt="文件类型: png" style="vertical-align: baseline;" border="0" height="16" width="16"></td>
+	<td><a href="https://bbs.dreamz.org/attachment.php?attachmentid=140183" target="_blank">image007.png</a> (14.5 KB, 18 次点击)</td>
+</tr>
+<tr>
+	<td><img title="文件类型: png" class="inlineimg" src="svnfiles/png.gif" alt="文件类型: png" style="vertical-align: baseline;" border="0" height="16" width="16"></td>
+	<td><a href="https://bbs.dreamz.org/attachment.php?attachmentid=140184" target="_blank">image009.png</a> (8.5 KB, 18 次点击)</td>
+</tr>
+<tr>
+	<td><img title="文件类型: png" class="inlineimg" src="svnfiles/png.gif" alt="文件类型: png" style="vertical-align: baseline;" border="0" height="16" width="16"></td>
+	<td><a href="https://bbs.dreamz.org/attachment.php?attachmentid=140182" target="_blank">image005.png</a> (21.3 KB, 18 次点击)</td>
+</tr>
+<tr>
+	<td><img title="文件类型: png" class="inlineimg" src="svnfiles/png.gif" alt="文件类型: png" style="vertical-align: baseline;" border="0" height="16" width="16"></td>
+	<td><a href="https://bbs.dreamz.org/attachment.php?attachmentid=140181" target="_blank">image003.png</a> (23.0 KB, 18 次点击)</td>
+</tr>
+<tr>
+	<td><img title="文件类型: png" class="inlineimg" src="svnfiles/png.gif" alt="文件类型: png" style="vertical-align: baseline;" border="0" height="16" width="16"></td>
+	<td><a href="https://bbs.dreamz.org/attachment.php?attachmentid=140180" target="_blank">image001.png</a> (13.5 KB, 19 次点击)</td>
+</tr>
+
+					</tbody></table>
+					</fieldset>
+			
+			
+			
+			
+			
+			
+			</div>
+		<!-- / attachments -->
+		
+		
+		
+		<!-- edit note -->
+			<div class="smallfont" align="right">[
+				由 upig在 今天 <span class="time">14:47</span>最后编辑.
+				
+			]</div>
+		<!-- / edit note -->
+		
+	
+	</td>
+</tr>
+<tr>
+        <td class="alt1" valign="bottom">
+		
+		<!-- sig -->
+			<div>
+				__________________<br><br>
+				<a href="http://xyzboard.com/" target="_blank"><font color="Red">xyz黑板</font></a>
+			</div>
+		<!-- / sig -->
+		
+        </td>
+</tr>
+<tr>
+        <td class="alt1" align="right" valign="bottom">
+		<!-- controls -->
+		
+			<a href="https://bbs.dreamz.org/editpost.php?do=editpost&amp;p=747167"><img title="编辑/删除信息" src="svnfiles/edit.gif" alt="编辑/删除信息" border="0"></a>
+		
+		
+		
+			<a href="https://bbs.dreamz.org/newreply.php?do=newreply&amp;p=747167"><img title="引用回复" src="svnfiles/quote_002.gif" alt="引用回复" border="0"></a>
+		
+		
+			<a href="https://bbs.dreamz.org/newreply.php?do=newreply&amp;p=747167" onclick="return qr(747167);"><img title="快速回复该信息" src="svnfiles/quickreply.gif" alt="快速回复该信息" border="0"></a>
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</tbody></table>
+
+<!-- post 747167 popup menu -->
+<div class="vbmenu_popup" id="postmenu_747167_menu" style="display: none; position: absolute; left: 0px; top: 0px;">
+	<table border="0" cellpadding="4" cellspacing="1" width="">
+	<tbody><tr>
+		<td class="thead">upig</td>
+	</tr>
+	
+		<tr><td style="cursor: default;" class="vbmenu_option"><a href="https://bbs.dreamz.org/member.php?userid=3402">查看公开的个人资料</a></td></tr>
+	
+	
+		<tr><td style="cursor: default;" class="vbmenu_option"><a href="https://bbs.dreamz.org/private.php?do=newpm&amp;userid=3402">发送一个悄悄话给 upig</a></td></tr>
+	
+	
+		<tr><td style="cursor: default;" class="vbmenu_option"><a href="https://bbs.dreamz.org/sendmessage.php?do=mailmember&amp;u=3402">给 upig 发送Email</a></td></tr>
+	
+	
+		<tr><td style="cursor: default;" class="vbmenu_option"><a href="http://xyzboard.com/">访问upig的主页!</a></td></tr>
+	
+	
+		<tr><td style="cursor: default;" class="vbmenu_option"><a href="https://bbs.dreamz.org/search.php?do=finduser&amp;userid=3402">查找 upig 的更多帖子</a></td></tr>
+	
+	
+	<tr><td style="cursor: default;" class="vbmenu_option"><a href="https://bbs.dreamz.org/profile.php?do=addlist&amp;userlist=buddy&amp;u=3402">将 upig 添加到你的好友名单中</a></td></tr>
+	
+	</tbody></table>
+</div>
+<!-- / post 747167 popup menu -->
+
+</div>
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #747167 --><!-- post #747171 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width: 100%; text-align: left;">
+			<div style="padding: 0px;">
+<div style="padding: 0px 0px 4px;">
+
+<table class="tborder" style="border: 1px solid rgb(86, 112, 147);" align="center" border="0" cellpadding="4" cellspacing="0" width="100%">
+<tbody><tr>
+	<td class="thead" style="font-weight: normal;" width="175">		
+			<!-- status icon and date -->
+			<a name="post747171"><img title="旧的" class="inlineimg" src="svnfiles/post_old.gif" alt="旧的" border="0"></a>
+			
+				今天, 11:54
+			
+			
+			<!-- / status icon and date -->				
+	</td>
+	<td class="thead" style="font-weight: normal;" align="right">
+		&nbsp;
+		#<a href="https://bbs.dreamz.org/showpost.php?p=747171&amp;postcount=2" target="new"><strong>2</strong></a>
+	</td>
+</tr>
+<tr valign="top">
+	<td class="alt2" rowspan="3" nowrap="nowrap" width="175">
+			
+			<div style="cursor: pointer;" width="175" id="postmenu_747171">
+				
+				<a class="bigusername" href="https://bbs.dreamz.org/member.php?u=3402">upig</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_747171", true); </script>
+				
+			</div>
+			<br>
+			
+				<div width="175" class="smallfont" align="center">
+					<a href="https://bbs.dreamz.org/member.php?u=3402"><img title="upig的头像" src="svnfiles/avatar3402_8.gif" alt="upig的头像" border="0"></a>
+				</div>
+			
+			<div width="175" class="smallfont" align="center">普通会员</div>
+			<div width="175" class="smallfont" align="center"><img src="svnfiles/stars04.gif" alt="" border="0"></div>
+		
+			
+			<div width="175" class="smallfont">
+				&nbsp;<br>
+				<fieldset style="padding: 5px;"><legend>资 料:</legend>
+				<div>注册日期: Oct 2005</div>
+				<div>来自: 长沙</div>
+				
+				<div>
+					帖子: 219
+					<img title="upig 不日成名" class="inlineimg" src="svnfiles/reputation_pos.gif" alt="upig 不日成名" border="0">
+				</div>
+				</fieldset>
+			</div>					
+		
+	</td>
+	<td class="alt1">
+	
+		
+			<!-- icon and title -->
+                        <table id="table1" border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <tbody><tr><td>
+			<div class="smallfont">
+				<img title="默认" class="inlineimg" src="svnfiles/icon1.gif" alt="默认" border="0">
+				
+			</div>
+			</td>
+			<td align="right"><div>  <a href="#" onclick="return imwindow('msn', '3402', 400, 200)"><img title="使用MSN给 upig 发送一个信息" src="svnfiles/im_msn.gif" alt="使用MSN给 upig 发送一个信息" border="0"></a> 
+			
+<img title="upig在线" class="inlineimg" src="svnfiles/user_online.gif" alt="upig在线" border="0">
+
+			<a href="#" onclick="return reputation(747171)"><img title="改变 upig 的声望" class="inlineimg" src="svnfiles/reputation.gif" alt="改变 upig 的声望" border="0"></a>
+			
+			
+			&nbsp;</div>
+			</td></tr>
+			</tbody></table>
+			<hr style="color: rgb(143, 160, 176);" size="1">
+			<!-- / icon and title -->
+		
+		
+		<!-- message -->
+		<div><font color="Blue">分支的建立</font><br>
+xb与lzj分别在onlytest这个工程中建立两个分支，分别为xb _051115和lz_051115。<br>
+<br>
+在这里分支命名要采用[姓名缩写_6个数的日期_后缀(可选)]的形式，比如xb_051208_1，xb_051212之类的。创建完分支后我们可以看到这个工程的目录结构如下图所示：<br>
+<a href="https://bbs.dreamz.org/attachment.php?attachmentid=140187&amp;stc=1" target="_blank"><img class="attach" src="svnfiles/attachment_005.png" alt="" border="0"></a>
+<br><br>
+建完之后， xb和lzj分别在本地取出对应的分支进行开发。<br>
+<br>
+<font color="Blue">分支的合并</font><br>
+当程序到达一个比较稳定的阶段，就需要把分支合并到主干上，下面讲述一下合并的流程。<br>
+<br>
+在本节中继续使用上一节中所示的工程与SVN仓库讲解。<br>
+<br>
+1.xb与lzj分别修改自己分支上的代码<br>
+现在，主干上的test_SVN.txt是空文档。<br>
+<br>
+由xb与lzj修改提交后，两个分支中test_SVN.txt分别如下两图所示：<br>
+<a href="https://bbs.dreamz.org/attachment.php?attachmentid=140188&amp;stc=1" target="_blank"><img class="attach" src="svnfiles/attachment_011.png" alt="" border="0"></a>
+<br><br>
+<a href="https://bbs.dreamz.org/attachment.php?attachmentid=140189&amp;stc=1" target="_blank"><img class="attach" src="svnfiles/attachment.png" alt="" border="0"></a>
+<br><br>
+<br>
+2.xb将xb_051129分支合并到主干<br>
+xb先把主干check out到本地。然后在主干的目录上右键选择svn-&gt;merge，弹出如下窗口： <br>
+<a href="https://bbs.dreamz.org/attachment.php?attachmentid=140190&amp;stc=1" target="_blank"><img class="attach" src="svnfiles/attachment_009.png" alt="" border="0"></a>
+<br><br>
+<br>
+此对话框的含义是把From指定的分支版本到To指定的分支版本之间的差异合并到主干上。<br>
+<br>
+在这里分支选的是xb_051129。版本号的选定方法是点击From中的Show Log，在Log窗口中按住Ctrl键，点击选择”made a
+copy”之上的那个版本，以及最顶上的那个版本，如图
+2.11所示。然后点击确定回到上图中的对话框，会自动填写From与To中的Revision号。<br>
+<a href="https://bbs.dreamz.org/attachment.php?attachmentid=140191&amp;stc=1" target="_blank"><img class="attach" src="svnfiles/attachment_004.png" alt="" border="0"></a>
+<br></div>
+		<!-- / message -->
+	
+		
+		<!-- attachments -->
+			<div style="padding: 4px;">
+			
+			
+			
+			
+		
+			
+			
+			
+				<fieldset class="fieldset">
+					<legend>所上传图片</legend>
+					<table border="0" cellpadding="0" cellspacing="3">
+					<tbody><tr>
+	<td><img title="文件类型: png" class="inlineimg" src="svnfiles/png.gif" alt="文件类型: png" style="vertical-align: baseline;" border="0" height="16" width="16"></td>
+	<td><a href="https://bbs.dreamz.org/attachment.php?attachmentid=140191" target="_blank">image019.png</a> (18.5 KB, 17 次点击)</td>
+</tr>
+<tr>
+	<td><img title="文件类型: png" class="inlineimg" src="svnfiles/png.gif" alt="文件类型: png" style="vertical-align: baseline;" border="0" height="16" width="16"></td>
+	<td><a href="https://bbs.dreamz.org/attachment.php?attachmentid=140189" target="_blank">image015.png</a> (3.0 KB, 17 次点击)</td>
+</tr>
+<tr>
+	<td><img title="文件类型: png" class="inlineimg" src="svnfiles/png.gif" alt="文件类型: png" style="vertical-align: baseline;" border="0" height="16" width="16"></td>
+	<td><a href="https://bbs.dreamz.org/attachment.php?attachmentid=140190" target="_blank">image017.png</a> (24.3 KB, 17 次点击)</td>
+</tr>
+<tr>
+	<td><img title="文件类型: png" class="inlineimg" src="svnfiles/png.gif" alt="文件类型: png" style="vertical-align: baseline;" border="0" height="16" width="16"></td>
+	<td><a href="https://bbs.dreamz.org/attachment.php?attachmentid=140188" target="_blank">image013.png</a> (2.8 KB, 17 次点击)</td>
+</tr>
+<tr>
+	<td><img title="文件类型: png" class="inlineimg" src="svnfiles/png.gif" alt="文件类型: png" style="vertical-align: baseline;" border="0" height="16" width="16"></td>
+	<td><a href="https://bbs.dreamz.org/attachment.php?attachmentid=140187" target="_blank">image011.png</a> (20.5 KB, 17 次点击)</td>
+</tr>
+
+					</tbody></table>
+					</fieldset>
+			
+			
+			
+			
+			
+			
+			</div>
+		<!-- / attachments -->
+		
+		
+		
+		<!-- edit note -->
+			<div class="smallfont" align="right">[
+				由 upig在 今天 <span class="time">12:06</span>最后编辑.
+				
+			]</div>
+		<!-- / edit note -->
+		
+	
+	</td>
+</tr>
+<tr>
+        <td class="alt1" valign="bottom">
+		
+		<!-- sig -->
+			<div>
+				__________________<br><br>
+				<a href="http://xyzboard.com/" target="_blank"><font color="Red">xyz黑板</font></a>
+			</div>
+		<!-- / sig -->
+		
+        </td>
+</tr>
+<tr>
+        <td class="alt1" align="right" valign="bottom">
+		<!-- controls -->
+		
+			<a href="https://bbs.dreamz.org/editpost.php?do=editpost&amp;p=747171"><img title="编辑/删除信息" src="svnfiles/edit.gif" alt="编辑/删除信息" border="0"></a>
+		
+		
+		
+			<a href="https://bbs.dreamz.org/newreply.php?do=newreply&amp;p=747171"><img title="引用回复" src="svnfiles/quote_002.gif" alt="引用回复" border="0"></a>
+		
+		
+			<a href="https://bbs.dreamz.org/newreply.php?do=newreply&amp;p=747171" onclick="return qr(747171);"><img title="快速回复该信息" src="svnfiles/quickreply.gif" alt="快速回复该信息" border="0"></a>
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</tbody></table>
+
+<!-- post 747171 popup menu -->
+<div class="vbmenu_popup" id="postmenu_747171_menu" style="display: none; position: absolute; left: 0px; top: 0px;">
+	<table border="0" cellpadding="4" cellspacing="1" width="">
+	<tbody><tr>
+		<td class="thead">upig</td>
+	</tr>
+	
+		<tr><td style="cursor: default;" class="vbmenu_option"><a href="https://bbs.dreamz.org/member.php?userid=3402">查看公开的个人资料</a></td></tr>
+	
+	
+		<tr><td style="cursor: default;" class="vbmenu_option"><a href="https://bbs.dreamz.org/private.php?do=newpm&amp;userid=3402">发送一个悄悄话给 upig</a></td></tr>
+	
+	
+		<tr><td style="cursor: default;" class="vbmenu_option"><a href="https://bbs.dreamz.org/sendmessage.php?do=mailmember&amp;u=3402">给 upig 发送Email</a></td></tr>
+	
+	
+		<tr><td style="cursor: default;" class="vbmenu_option"><a href="http://xyzboard.com/">访问upig的主页!</a></td></tr>
+	
+	
+		<tr><td style="cursor: default;" class="vbmenu_option"><a href="https://bbs.dreamz.org/search.php?do=finduser&amp;userid=3402">查找 upig 的更多帖子</a></td></tr>
+	
+	
+	<tr><td style="cursor: default;" class="vbmenu_option"><a href="https://bbs.dreamz.org/profile.php?do=addlist&amp;userlist=buddy&amp;u=3402">将 upig 添加到你的好友名单中</a></td></tr>
+	
+	</tbody></table>
+</div>
+<!-- / post 747171 popup menu -->
+
+</div>
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #747171 --><!-- post #747173 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width: 100%; text-align: left;">
+			<div style="padding: 0px;">
+
+
+<table class="tborder" style="border: 1px solid rgb(86, 112, 147);" align="center" border="0" cellpadding="4" cellspacing="0" width="100%">
+<tbody><tr>
+	<td class="thead" style="font-weight: normal;" width="175">		
+			<!-- status icon and date -->
+			<a name="post747173"><img title="旧的" class="inlineimg" src="svnfiles/post_old.gif" alt="旧的" border="0"></a>
+			
+				今天, 11:55
+			
+			
+			<!-- / status icon and date -->				
+	</td>
+	<td class="thead" style="font-weight: normal;" align="right">
+		&nbsp;
+		#<a href="https://bbs.dreamz.org/showpost.php?p=747173&amp;postcount=3" target="new"><strong>3</strong></a>
+	</td>
+</tr>
+<tr valign="top">
+	<td class="alt2" rowspan="3" nowrap="nowrap" width="175">
+			
+			<div style="cursor: pointer;" width="175" id="postmenu_747173">
+				
+				<a class="bigusername" href="https://bbs.dreamz.org/member.php?u=3402">upig</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_747173", true); </script>
+				
+			</div>
+			<br>
+			
+				<div width="175" class="smallfont" align="center">
+					<a href="https://bbs.dreamz.org/member.php?u=3402"><img title="upig的头像" src="svnfiles/avatar3402_8.gif" alt="upig的头像" border="0"></a>
+				</div>
+			
+			<div width="175" class="smallfont" align="center">普通会员</div>
+			<div width="175" class="smallfont" align="center"><img src="svnfiles/stars04.gif" alt="" border="0"></div>
+		
+			
+			<div width="175" class="smallfont">
+				&nbsp;<br>
+				<fieldset style="padding: 5px;"><legend>资 料:</legend>
+				<div>注册日期: Oct 2005</div>
+				<div>来自: 长沙</div>
+				
+				<div>
+					帖子: 219
+					<img title="upig 不日成名" class="inlineimg" src="svnfiles/reputation_pos.gif" alt="upig 不日成名" border="0">
+				</div>
+				</fieldset>
+			</div>					
+		
+	</td>
+	<td class="alt1">
+	
+		
+			<!-- icon and title -->
+                        <table id="table1" border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <tbody><tr><td>
+			<div class="smallfont">
+				<img title="默认" class="inlineimg" src="svnfiles/icon1.gif" alt="默认" border="0">
+				
+			</div>
+			</td>
+			<td align="right"><div>  <a href="#" onclick="return imwindow('msn', '3402', 400, 200)"><img title="使用MSN给 upig 发送一个信息" src="svnfiles/im_msn.gif" alt="使用MSN给 upig 发送一个信息" border="0"></a> 
+			
+<img title="upig在线" class="inlineimg" src="svnfiles/user_online.gif" alt="upig在线" border="0">
+
+			<a href="#" onclick="return reputation(747173)"><img title="改变 upig 的声望" class="inlineimg" src="svnfiles/reputation.gif" alt="改变 upig 的声望" border="0"></a>
+			
+			
+			&nbsp;</div>
+			</td></tr>
+			</tbody></table>
+			<hr style="color: rgb(143, 160, 176);" size="1">
+			<!-- / icon and title -->
+		
+		
+		<!-- message -->
+		<div>然后直接点击merge进行合并，你也可以通过dry run来看是不是两者之间有差异。由于没有其它人修改主干，所以合并的很顺利，下图是xb_051115与主干合并后的结果。合并完毕之后，由xb对主干进行提交。<br>
+<a href="https://bbs.dreamz.org/attachment.php?attachmentid=140194&amp;stc=1" target="_blank"><img class="attach" src="svnfiles/attachment_006.png" alt="" border="0"></a>
+<br><br>
+<br>
+3.lzj将lzj_051129分支合并到主干，解决冲突<br>
+xb合并完毕之后，lzj要将他的分支合并到主干上去，方法同上。但是由于xb已经修改过主干，所以产生了冲突，会弹出一个冲突对话框。双击对话框中的产生冲突的文件名，就可以调出工具对此文件进行合并，下图是我们用merge工具显示的界面。<br>
+<a href="https://bbs.dreamz.org/attachment.php?attachmentid=140195&amp;stc=1" target="_blank"><img class="attach" src="svnfiles/attachment.jpg" alt="" border="0"></a>
+<br><br><ul><li>首先比较第一个窗口与第二个窗口，把结果修改合并到第二个窗口。</li><li>然后确保光标处于第二个窗口时，点击上图中红色圈圈所示的按钮。这样会把第二个窗口的内容全部复制到第三个容口。之后保存，退出。</li><li>然后在工程目录上点右键，进行SVN-&gt;Resolved。这样会删除无用的临时文件。</li><li>最后提交所作的修改，并添加详细的注释。</li></ul><br>
+<b><font color="Blue">其它注意事项</font></b><br>
+<font color="Blue">SVN中的标签</font><br>
+与CVS不同，使用SVN时不用专门为目录添加标签，因为SVN也对目录进行版本管理。<br>
+<br>
+我们在提交时写好注释（比如重要的版本提交时使用051201之类的日期作为开头），就可以通过注释来查找比较重要的目录版本号，相当于CVS或VSS中的标签。<br>
+<br>
+另外，每个工程都会有一个版本说明文件，通过此文件可以查找关键版本。<br>
+<br>
+<font color="Blue">文件的删除、移动与重命名</font><br>
+你可以重命名、移动或删除你的文件或文件夹，但请使用SVN进行这些操作，否则之前的版本信息会丢失。<br>
+<br>
+使用SVN删除、移动与重命名文件夹的方法是在文件/文件夹上点右键进行SVN操作，或直接在资源浏览器中使用右键拖放（会弹出SVN选项）。<br>
+<br>
+文件的删除、移动与重命名之前，必须保证工作目录是最新的版本；进行这些操作之后，需要进行提交。<br>
+<br>
+<font color="Blue">版本的回退</font><br>
+在代码的编写过程中，难免会有不尽人意的地方，你也许需要回退到某一个版本，但是在这个过程中可能有一些文件你想保留，也有一些文件你不想保留，这就牵扯到很复杂的版本管理过程，在这里给大家推荐几种方法。<br>
+<br>
+1.        若是你编辑了工程，在没有提交的前提下，你想放弃这些修改，你可以直接选择revert就可以更新到工程的最新的版本。<br>
+<br>
+2. 若是你想退回到某一个版本，你就可以直接选择update to
+reversion如图,这样我们就可以把我们的版本回退到你选中的版本去，这种情况下SVN并没有显示出有什么冲突，并且新建立的文件也还在，但是在这
+种情况下你并不能直接在你回退后的版本上进行编辑，因为SVN的版本控制还是在最新的主干上。我们需要 update并解决冲突。<br>
+<br>
+3.        你可以直接选择revert changes from this revision如图，这样的话你可以直接解决冲突并提交。不过这种方法的不足是，你新建的文件都没有了，整个工程都回退到之前的版本了。<br>
+<br>
+4.        我推荐的一种方法是，直接export一个你需要的版本，然后用你export的版本覆盖你的最新的版本，这样你就可以不丢失你新建的文件，同时获得head的SVN控制文件。<br>
+<br>
+<a href="https://bbs.dreamz.org/attachment.php?attachmentid=140196&amp;stc=1" target="_blank"><img class="attach" src="svnfiles/attachment_002.png" alt="" border="0"></a>
+<br><br>
+<br>
+<font color="Blue">提交的时机</font><br>
+每个工程会有很多个小模块，当某个模块达到稳定的时候，你就需要提交一次，以免写下个模块代码的时候出现不可恢复的错误。<br>
+<br>
+每一次提交需要前，需要通过pclint检查，保证是一个编译没有错误的版本。当提交比较稳定的版本的时候，同时要修改你的版本号。<br>
+<br>
+提交的时候要添加注释，若多人共同修改同一段代码我们就需要为注释添加上更加详细的说明<br>
+<br>
+<font color="Blue">版本说明文件</font><br>
+版本说明文件为xml表格，可用excel编辑，它会记录下关键的版本信息。<br>
+<br>
+版本说明文件内容如下表。发布版本是指用户对外公布的版本号，后文中有详细描述；Revision是SVN内部的工程文件夹的版本号。一个发布版本可能对应多个Revision：<br>
+<a href="https://bbs.dreamz.org/attachment.php?attachmentid=140198&amp;stc=1" target="_blank"><img class="attach" src="svnfiles/attachment_002.jpg" alt="" border="0"></a>
+<br></div>
+		<!-- / message -->
+	
+		
+		<!-- attachments -->
+			<div style="padding: 4px;">
+			
+			
+			
+			
+		
+			
+			
+			
+				<fieldset class="fieldset">
+					<legend>所上传图片</legend>
+					<table border="0" cellpadding="0" cellspacing="3">
+					<tbody><tr>
+	<td><img title="文件类型: png" class="inlineimg" src="svnfiles/png.gif" alt="文件类型: png" style="vertical-align: baseline;" border="0" height="16" width="16"></td>
+	<td><a href="https://bbs.dreamz.org/attachment.php?attachmentid=140196" target="_blank">image024.png</a> (29.5 KB, 17 次点击)</td>
+</tr>
+<tr>
+	<td><img title="文件类型: jpg" class="inlineimg" src="svnfiles/jpg.gif" alt="文件类型: jpg" style="vertical-align: baseline;" border="0" height="16" width="16"></td>
+	<td><a href="https://bbs.dreamz.org/attachment.php?attachmentid=140195" target="_blank">image023.jpg</a> (61.0 KB, 17 次点击)</td>
+</tr>
+<tr>
+	<td><img title="文件类型: png" class="inlineimg" src="svnfiles/png.gif" alt="文件类型: png" style="vertical-align: baseline;" border="0" height="16" width="16"></td>
+	<td><a href="https://bbs.dreamz.org/attachment.php?attachmentid=140194" target="_blank">image021.png</a> (2.8 KB, 17 次点击)</td>
+</tr>
+<tr>
+	<td><img title="文件类型: jpg" class="inlineimg" src="svnfiles/jpg.gif" alt="文件类型: jpg" style="vertical-align: baseline;" border="0" height="16" width="16"></td>
+	<td><a href="https://bbs.dreamz.org/attachment.php?attachmentid=140198" target="_blank">image026.jpg</a> (32.4 KB, 16 次点击)</td>
+</tr>
+
+					</tbody></table>
+					</fieldset>
+			
+			
+			
+			
+			
+			
+			</div>
+		<!-- / attachments -->
+		
+		
+		
+		<!-- edit note -->
+			<div class="smallfont" align="right">[
+				由 upig在 今天 <span class="time">12:10</span>最后编辑.
+				
+			]</div>
+		<!-- / edit note -->
+		
+	
+	</td>
+</tr>
+<tr>
+        <td class="alt1" valign="bottom">
+		
+		<!-- sig -->
+			<div>
+				__________________<br><br>
+				<a href="http://xyzboard.com/" target="_blank"><font color="Red">xyz黑板</font></a>
+			</div>
+		<!-- / sig -->
+		
+        </td>
+</tr>
+<tr>
+        <td class="alt1" align="right" valign="bottom">
+		<!-- controls -->
+		
+			<a href="https://bbs.dreamz.org/editpost.php?do=editpost&amp;p=747173"><img title="编辑/删除信息" src="svnfiles/edit.gif" alt="编辑/删除信息" border="0"></a>
+		
+		
+		
+			<a href="https://bbs.dreamz.org/newreply.php?do=newreply&amp;p=747173"><img title="引用回复" src="svnfiles/quote_002.gif" alt="引用回复" border="0"></a>
+		
+		
+			<a href="https://bbs.dreamz.org/newreply.php?do=newreply&amp;p=747173" onclick="return qr(747173);"><img title="快速回复该信息" src="svnfiles/quickreply.gif" alt="快速回复该信息" border="0"></a>
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</tbody></table>
+
+<!-- post 747173 popup menu -->
+<div class="vbmenu_popup" id="postmenu_747173_menu" style="display: none; position: absolute; left: 0px; top: 0px;">
+	<table border="0" cellpadding="4" cellspacing="1" width="">
+	<tbody><tr>
+		<td class="thead">upig</td>
+	</tr>
+	
+		<tr><td style="cursor: default;" class="vbmenu_option"><a href="https://bbs.dreamz.org/member.php?userid=3402">查看公开的个人资料</a></td></tr>
+	
+	
+		<tr><td style="cursor: default;" class="vbmenu_option"><a href="https://bbs.dreamz.org/private.php?do=newpm&amp;userid=3402">发送一个悄悄话给 upig</a></td></tr>
+	
+	
+		<tr><td style="cursor: default;" class="vbmenu_option"><a href="https://bbs.dreamz.org/sendmessage.php?do=mailmember&amp;u=3402">给 upig 发送Email</a></td></tr>
+	
+	
+		<tr><td style="cursor: default;" class="vbmenu_option"><a href="http://xyzboard.com/">访问upig的主页!</a></td></tr>
+	
+	
+		<tr><td style="cursor: default;" class="vbmenu_option"><a href="https://bbs.dreamz.org/search.php?do=finduser&amp;userid=3402">查找 upig 的更多帖子</a></td></tr>
+	
+	
+	<tr><td style="cursor: default;" class="vbmenu_option"><a href="https://bbs.dreamz.org/profile.php?do=addlist&amp;userlist=buddy&amp;u=3402">将 upig 添加到你的好友名单中</a></td></tr>
+	
+	</tbody></table>
+</div>
+<!-- / post 747173 popup menu -->
+
+
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #747173 --></div>
+
+<!-- start content table -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width: 100%; text-align: left;">
+			<div style="padding: 0px;">
+
+<!-- / start content table -->
+
+<!-- controls below postbits -->
+<table style="margin-top: 5px;" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+	<td class="smallfont" width="33%">
+		<a href="https://bbs.dreamz.org/newreply.php?do=newreply&amp;noquote=1&amp;p=747173"><img title="回复" src="svnfiles/reply.gif" alt="回复" border="0"></a>
+	</td>
+	<td align="center" width="33%">
+		<span style="cursor: pointer;" id="threadtools2">
+		<a href="#goto_threadtools2">主题工具</a>
+		<script type="text/javascript"> vbmenu_register("threadtools2"); </script><img src="svnfiles/menu_open.gif" alt="" border="0">
+		</span>
+	</td>
+	<td align="right" width="33%">
+		
+	</td>
+</tr>
+</tbody></table>
+<!-- / controls below postbits -->
+
+<br>
+
+<div class="smallfont" align="center">
+	<strong>«</strong>
+		<a href="https://bbs.dreamz.org/showthread.php?t=80449&amp;goto=nextoldest">上一个主题</a>
+		|
+		<a href="https://bbs.dreamz.org/showthread.php?t=80449&amp;goto=nextnewest">下一个主题</a>
+	<strong>»</strong>
+</div>
+
+<br>
+
+<script type="text/javascript">
+<!--
+var WYSIWYG = 1;
+var threadedmode = 0;
+var minchars = 2;
+var maxchars = 0;
+var require_click = 0;
+var must_click_message = "请点击上面任意一个帖子中右下角的快速回复图标来激活快速回复。";
+var istyles = new Array(); istyles = { "pi_button_down" : [ "#98B5E2", "#000000", "0px", "1px solid #316AC5" ], "pi_button_hover" : [ "#C1D2EE", "#000000", "0px", "1px solid #316AC5" ], "pi_button_selected" : [ "#E1E6E8", "#000000", "0px", "1px solid #316AC5" ], "pi_menu_down" : [ "#98B5E2", "#316AC5", "0px", "1px solid #316AC5" ], "pi_menu_hover" : [ "#C1D2EE", "#316AC5", "0px", "1px solid #316AC5" ], "pi_menu_normal" : [ "#FFFFFF", "#000000", "0px", "1px solid #FFFFFF" ], "pi_popup_down" : [ "#98B5E2", "#000000", "0px", "1px solid #316AC5" ], "pi_button_normal" : [ "#E1E7EC", "#1E375A", "1px", "none" ] };
+var normalmode = false;
+var vbphrase = {
+	// wysiwyg only
+	"wysiwyg_please_wait" : "请等待所见即所得编辑器载入完成...",
+	"wysiwyg_initialized" : "针对%1$s环境的所见即所得编辑器初始化花费了%2$s秒钟。",
+	"wysiwyg_command_invalid" : "此命令无效或者没有被执行。",
+	"moz_must_select_text" : "Mozilla需要你选中一些文字才能使用此功能",
+	"moz_edit_config_file" : "你需要编辑你的Mozilla配置文件以允许此操作。",
+	"enter_tag_option" : "请输入%1$s标签的选项：",
+	"must_select_text_to_use" : "You must select some text to use this function.",
+	"browser_is_safari_no_wysiwyg" : "",
+	// standard only
+	"enter_text_to_be_formatted" : "输入希望加以格式化的文字",
+	"enter_link_text" : "输入此链接的显示文字（可选）：",
+	"enter_list_type" : "你想创建何种类型的列表？输入“1”创建一个数字列表，输入“a”创建一个字母列表，留空则创建一个圆点列表：",
+	"enter_list_item" : "输入一个列表项目。\n留空或者点击“取消”则完成列表：",
+	// both
+	"must_enter_subject" : "你必须输入一个标题/主题！",
+	"message_too_short" : "你输入的信息太短,最小要求为%1$s个字.",
+	"enter_link_url" :  "请输入链接的URL：",
+	"enter_image_url" : "请输入图片的URL：",
+	"enter_email_link" : "请输入Email地址链接："
+};
+//-->
+</script>
+	
+<form action="newreply.php" method="post" name="vbform" onsubmit="return checkQR(this);">
+
+<table class="tborder" align="center" border="0" cellpadding="4" cellspacing="1" width="100%">
+<thead>
+	<tr>
+		<td class="tcat" colspan="2">
+			<a style="float: right;" href="#top" onclick="return  toggle_collapse('quickreply');"><img id="collapseimg_quickreply" src="svnfiles/collapse_tcat.gif" alt="" border="0"></a>
+			<!--<img class="inlineimg" src="images/drl2/buttons/quickreply.gif" alt="" title="快速回复" border="0"  />-->
+			快速回复
+		</td>
+	</tr>
+</thead>
+<tbody id="collapseobj_quickreply" style="">
+<tr>
+	<td class="panelsurround" align="center">
+		<div class="panel">	
+			<table align="center" border="0" cellpadding="0" cellspacing="0">
+			<tbody><tr>
+				<td class="smallfont" align="left">信息:</td>
+			</tr>
+			<tr>
+				<td id="vBulletin_editor" align="left">
+				<!-- <<<< indent back for ease of reading -->		
+
+
+
+
+
+<!-- standard quick reply -->
+
+	<div id="controlbar">
+	<table border="0" cellpadding="0" cellspacing="0">
+	<tbody><tr>
+		
+			<td><div class="imagebutton"><a href="#" onclick="return vbcode('B', '')"><img title="粗体" src="svnfiles/bold.gif" alt="粗体" border="0" height="20" width="21"></a></div></td>
+			<td><div class="imagebutton"><a href="#" onclick="return vbcode('I', '')"><img title="斜体" src="svnfiles/italic.gif" alt="斜体" border="0" height="20" width="21"></a></div></td>
+			<td><div class="imagebutton"><a href="#" onclick="return vbcode('U', '')"><img title="下划线" src="svnfiles/underline.gif" alt="下划线" border="0" height="20" width="21"></a></div></td>
+			<td><img src="svnfiles/separator.gif" alt="" height="20" width="6"></td>
+		
+		<td><div class="imagebutton"><a href="#" onclick="return vbcode('QUOTE', '')"><img src="svnfiles/quote.gif" alt="插入[QUOTE]标签" title="插入[QUOTE]标签" border="0" height="21" width="21"></a></div></td>
+	</tr>
+	</tbody></table>
+	</div>
+	
+	<div class="controlbar">
+		<textarea name="message" id="qr_message" class="bginput" style="width: 600px; height: 100px;" cols="60" rows="5" tabindex="1"></textarea>
+	</div>
+				
+	<script type="text/javascript" src="svnfiles/vbulletin_editor.js"></script>
+	<script type="text/javascript" src="svnfiles/vbulletin_stdedit.js"></script>
+
+<!-- / standard quick reply -->
+
+
+
+
+
+
+				<!-- >>>> outdent back to normal -->
+				</td>
+			</tr>
+			<tr>
+				<td align="left">
+				
+					<fieldset class="fieldset" style="margin: 3px 0px 0px;">
+						<legend>选项</legend>
+						<div>
+							
+								<div style="float: right;">
+									<label for="cb_signature"><input name="signature" value="1" id="cb_signature" tabindex="5" checked="checked" type="checkbox">显示个人签名</label>
+								</div>
+							
+							<label for="qr_quickreply"><input disabled="disabled" name="quickreply" value="1" id="qr_quickreply" accesskey="w" tabindex="4" checked="checked" type="checkbox">回复中引用信息吗?</label>
+						</div>
+					</fieldset>
+				
+				</td>
+			</tr>
+			</tbody></table>
+		</div>
+		
+		<div style="margin-top: 4px;">
+			<input name="fromquickreply" value="1" type="hidden">
+			<input name="s" value="" type="hidden">
+			<input name="do" value="postreply" type="hidden">
+			<input name="t" value="80449" id="qr_threadid" type="hidden">
+			<input name="p" value="who cares" id="qr_postid" type="hidden">
+			<input name="parseurl" value="1" type="hidden">
+			<input name="clickedelm" value="" type="hidden">
+			<input class="button" value="快速回复" accesskey="s" title="(Alt + S)" name="sbutton" tabindex="2" onclick="this.form.clickedelm.value=this.value" type="submit">
+			<input class="button" value="高级模式" accesskey="x" title="(Alt + X)" name="preview" tabindex="3" id="qr_preview" onclick="this.form.clickedelm.value = this.value" type="submit">
+		</div>		
+	</td>
+</tr>
+</tbody>
+</table>
+
+</form>
+<br>
+
+
+
+<script type="text/javascript" src="svnfiles/vbulletin_quickreply.js"></script>
+<!-- END WYSWIWYG QUICK REPLY -->
+
+<!-- currently active users -->
+
+<!-- currently active users -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- popup menu contents -->
+<br>
+
+<!-- thread tools menu -->
+<div class="vbmenu_popup" id="threadtools_menu" style="display: none; position: absolute; left: 0px; top: 0px;">
+<form action="postings.php" method="post" name="threadadminform">
+	<table border="0" cellpadding="4" cellspacing="1" width="">
+	<tbody><tr>
+		<td class="thead">主题工具<a name="goto_threadtools"></a></td>
+	</tr>
+	<tr>
+		<td style="cursor: default;" class="vbmenu_option"><img title="显示可打印版本" class="inlineimg" src="svnfiles/printer.gif" alt="显示可打印版本"> <a href="https://bbs.dreamz.org/printthread.php?t=80449" accesskey="p">显示可打印版本</a></td>
+	</tr>
+	<tr>
+		<td style="cursor: default;" class="vbmenu_option"><img title="Email此页给朋友" class="inlineimg" src="svnfiles/sendtofriend.gif" alt="Email此页给朋友"> <a href="https://bbs.dreamz.org/sendmessage.php?do=sendtofriend&amp;t=80449">Email此页给朋友</a></td>
+	</tr>
+	
+	<tr>
+		<td style="cursor: default;" class="vbmenu_option"><img title="订阅" class="inlineimg" src="svnfiles/subscribe.gif" alt="订阅">
+		
+			<a href="https://bbs.dreamz.org/subscription.php?do=removesubscription&amp;t=80449">取消订阅该主题</a>
+		
+		</td>
+	</tr>
+	
+	
+	<tr>
+		<td style="cursor: default;" class="vbmenu_option"><img title="添加一个投票" class="inlineimg" src="svnfiles/addpoll.gif" alt="添加一个投票"> <a href="https://bbs.dreamz.org/poll.php?do=newpoll&amp;t=80449">添加投票到此主题</a></td>
+	</tr>
+	
+	
+	<tr>
+		<td class="thead">管理工具<a name="goto_threadadmin"></a></td>
+	</tr>
+	<tr>
+		<td style="cursor: default;" class="vbmenu_option" title="">
+		<div><label for="ao_oct"><input name="do" id="ao_oct" value="openclosethread" checked="checked" type="radio">关闭主题</label></div>
+		<div><label for="ao_mvt"><input name="do" id="ao_mvt" value="movethread" type="radio">移动/复制主题</label></div>
+		<div><label for="ao_sut"><input name="do" id="ao_sut" value="stick" type="radio">置顶主题</label></div>
+		<div><label for="ao_edt"><input name="do" id="ao_edt" value="editthread" type="radio">编辑主题</label></div>
+		<div><label for="ao_dlt"><input name="do" id="ao_dlt" value="deletethread" type="radio">删除主题</label></div>
+		<div><label for="ao_dlp"><input name="do" id="ao_dlp" value="deleteposts" type="radio">删除帖子</label></div>
+		<div><label for="ao_mgt"><input name="do" id="ao_mgt" value="mergethread" type="radio">合并主题</label></div>
+		<div><label for="ao_spt"><input name="do" id="ao_spt" value="splitthread" type="radio">分割主题</label></div>
+		<div><label for="ao_rrd"><input name="do" id="ao_rrd" value="removeredirect" type="radio">移除重定向链接</label></div>
+		
+		
+		</td>
+	</tr>
+	<tr>
+		<td style="cursor: default;" class="vbmenu_option" title="" align="center">
+			<input name="s" value="" type="hidden">
+			<input name="t" value="80449" type="hidden">
+			<input name="pollid" value="" type="hidden">
+			<input class="button" value="执行操作" type="submit">
+		</td>
+	</tr>
+	
+	</tbody></table>
+</form>
+</div>
+<div class="vbmenu_popup" id="threadtools2_menu" style="display: none; position: absolute; left: 0px; top: 0px;">
+<form action="postings.php" method="post" name="threadadminform">
+	<table border="0" cellpadding="4" cellspacing="1" width="">
+	<tbody><tr>
+		<td class="thead">主题工具<a name="goto_threadtools2"></a></td>
+	</tr>
+	<tr>
+		<td style="cursor: default;" class="vbmenu_option"><img title="显示可打印版本" class="inlineimg" src="svnfiles/printer.gif" alt="显示可打印版本"> <a href="https://bbs.dreamz.org/printthread.php?t=80449" accesskey="p">显示可打印版本</a></td>
+	</tr>
+	<tr>
+		<td style="cursor: default;" class="vbmenu_option"><img title="Email此页给朋友" class="inlineimg" src="svnfiles/sendtofriend.gif" alt="Email此页给朋友"> <a href="https://bbs.dreamz.org/sendmessage.php?do=sendtofriend&amp;t=80449">Email此页给朋友</a></td>
+	</tr>
+	
+	<tr>
+		<td style="cursor: default;" class="vbmenu_option"><img title="订阅" class="inlineimg" src="svnfiles/subscribe.gif" alt="订阅">
+		
+			<a href="https://bbs.dreamz.org/subscription.php?do=removesubscription&amp;t=80449">取消订阅该主题</a>
+		
+		</td>
+	</tr>
+	
+	
+	<tr>
+		<td style="cursor: default;" class="vbmenu_option"><img title="添加一个投票" class="inlineimg" src="svnfiles/addpoll.gif" alt="添加一个投票"> <a href="https://bbs.dreamz.org/poll.php?do=newpoll&amp;t=80449">添加投票到此主题</a></td>
+	</tr>
+	
+	
+	<tr>
+		<td class="thead">管理工具<a name="goto_threadadmin"></a></td>
+	</tr>
+	<tr>
+		<td style="cursor: default;" class="vbmenu_option" title="">
+		<div><label for="ao_oct2"><input name="do" id="ao_oct2" value="openclosethread" checked="checked" type="radio">关闭主题</label></div>
+		<div><label for="ao_mvt2"><input name="do" id="ao_mvt2" value="movethread" type="radio">移动/复制主题</label></div>
+		<div><label for="ao_sut2"><input name="do" id="ao_sut2" value="stick" type="radio">置顶主题</label></div>
+		<div><label for="ao_edt2"><input name="do" id="ao_edt2" value="editthread" type="radio">编辑主题</label></div>
+		<div><label for="ao_dlt2"><input name="do" id="ao_dlt2" value="deletethread" type="radio">删除主题</label></div>
+		<div><label for="ao_dlp2"><input name="do" id="ao_dlp2" value="deleteposts" type="radio">删除帖子</label></div>
+		<div><label for="ao_mgt2"><input name="do" id="ao_mgt2" value="mergethread" type="radio">合并主题</label></div>
+		<div><label for="ao_spt2"><input name="do" id="ao_spt2" value="splitthread" type="radio">分割主题</label></div>
+		<div><label for="ao_rrd2"><input name="do" id="ao_rrd2" value="removeredirect" type="radio">移除重定向链接</label></div>
+		
+		
+		</td>
+	</tr>
+	<tr>
+		<td style="cursor: default;" class="vbmenu_option" title="" align="center">
+			<input name="s" value="" type="hidden">
+			<input name="t" value="80449" type="hidden">
+			<input name="pollid" value="" type="hidden">
+			<input class="button" value="执行操作" type="submit">
+		</td>
+	</tr>
+	
+	</tbody></table>
+</form>
+</div>
+<!-- / thread tools menu -->
+
+<!-- **************************************************** -->
+
+<!-- thread display mode menu -->
+<div class="vbmenu_popup" id="displaymodes_menu" style="display: none; position: absolute; left: 0px; top: 0px;">
+	<table border="0" cellpadding="4" cellspacing="1" width="">
+	<tbody><tr>
+		<td class="thead">显示模式<a name="goto_displaymodes"></a></td>
+	</tr>
+	<tr>
+	
+		<td style="cursor: default;" class="vbmenu_option" title=""><img title="平铺模式" class="inlineimg" src="svnfiles/mode_linear.gif" alt="平铺模式"> <strong>平铺模式</strong></td>
+	
+	</tr>
+	<tr>
+	
+		<td style="cursor: default;" class="vbmenu_option"><img title="混合模式" class="inlineimg" src="svnfiles/mode_hybrid.gif" alt="混合模式"> <a href="https://bbs.dreamz.org/showthread.php?mode=hybrid&amp;t=80449">切换到混合模式</a></td>
+	
+	</tr>
+	<tr>
+	
+		<td style="cursor: default;" class="vbmenu_option"><img title="树型模式" class="inlineimg" src="svnfiles/mode_threaded.gif" alt="树型模式"> <a href="https://bbs.dreamz.org/showthread.php?p=747167&amp;mode=threaded#post747167">切换到树型模式</a></td>
+	
+	</tr>
+	</tbody></table>
+</div>
+<!-- / thread display mode menu -->
+
+<!-- **************************************************** -->
+
+
+<!-- thread search menu -->
+<div class="vbmenu_popup" id="threadsearch_menu" style="display: none; position: absolute; left: 0px; top: 0px;">
+<form action="search.php" method="post">
+	<table border="0" cellpadding="4" cellspacing="1" width="">
+	<tbody><tr>
+		<td class="thead">在此主题中搜索<a name="goto_threadsearch"></a></td>
+	</tr>
+	<tr>
+		<td style="cursor: default;" class="vbmenu_option" title="">
+			<input name="s" value="" type="hidden">
+			<input name="do" value="process" type="hidden">
+			<input name="searchthread" value="1" type="hidden">
+			<input name="showposts" value="1" type="hidden">
+			<input name="searchthreadid" value="80449" type="hidden">
+			<input class="bginput" name="query" size="20" type="text"><!-- go button -->
+<input class="button" value="Go" type="submit"><br>
+		</td>
+	</tr>
+	<tr>
+		<td style="cursor: default;" class="vbmenu_option"><a href="https://bbs.dreamz.org/search.php?">高级搜索</a></td>
+	</tr>
+	</tbody></table>
+</form>
+</div>
+<!-- / thread search menu -->
+
+
+<!-- **************************************************** -->
+
+<!-- thread rating menu -->
+<div class="vbmenu_popup" id="threadrating_menu" style="display: none; position: absolute; left: 0px; top: 0px;">
+<form action="threadrate.php" method="post">
+	<table border="0" cellpadding="4" cellspacing="1" width="">
+	<tbody><tr>
+		<td class="thead">评价此主题<a name="goto_threadrating"></a></td>
+	</tr>
+	
+	<tr>
+		<td style="cursor: default;" class="vbmenu_option" title="">
+		<div><img title="精彩" class="inlineimg" src="svnfiles/rating_5.gif" alt="精彩"><label for="vote5"><input name="vote" id="vote5" value="5" type="radio">精彩</label></div>
+		<div><img title="好" class="inlineimg" src="svnfiles/rating_4.gif" alt="好"><label for="vote4"><input name="vote" id="vote4" value="4" type="radio">好</label></div>
+		<div><img title="一般" class="inlineimg" src="svnfiles/rating_3.gif" alt="一般"><label for="vote3"><input name="vote" id="vote3" value="3" type="radio">一般</label></div>
+		<div><img title="差" class="inlineimg" src="svnfiles/rating_2.gif" alt="差"><label for="vote2"><input name="vote" id="vote2" value="2" type="radio">差</label></div>
+		<div><img title="太差" class="inlineimg" src="svnfiles/rating_1.gif" alt="太差"><label for="vote1"><input name="vote" id="vote1" value="1" type="radio">太差</label></div>
+		</td>
+	</tr>
+	<tr>
+		<td style="cursor: default;" class="vbmenu_option" title="" align="center">
+			<input name="s" value="59d5325b8628e9530d4a72c11d02fb91" type="hidden">
+			<input name="t" value="80449" type="hidden">
+			<input name="pp" value="100" type="hidden">
+			<input name="page" value="1" type="hidden">
+			<input class="button" value="投票" type="submit">
+		</td>
+	</tr>
+	
+	</tbody></table>
+</form>
+</div>
+<!-- / thread rating menu -->
+
+
+<!-- / popup menu contents -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- forum rules and admin links -->
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="bottom">
+	<td class="smallfont" align="left">
+		<table class="tborder" border="0" cellpadding="4" cellspacing="1" width="180">
+<thead>
+<tr>
+	<td class="thead">
+		<a style="float: right;" href="#top" onclick="return toggle_collapse('forumrules')"><img id="collapseimg_forumrules" src="svnfiles/collapse_thead.gif" alt="" border="0"></a>
+		发贴规则
+	</td>
+</tr>
+</thead>
+<tbody id="collapseobj_forumrules" style="">
+<tr>
+	<td class="alt1" nowrap="nowrap"><div class="smallfont">
+		
+		<div>你<strong>可以</strong>发表新主题</div>
+		<div>你<strong>可以</strong>回复帖子</div>
+		<div>你<strong>可以</strong>上传附件</div>
+		<div>你<strong>可以</strong>编辑自己的帖子</div>
+		<hr>
+		
+		<div><a href="https://bbs.dreamz.org/misc.php?do=bbcode" target="_blank">vB代码</a> <strong>开启</strong></div>
+		<div><a href="https://bbs.dreamz.org/misc.php?do=showsmilies" target="_blank">表情符号</a> <strong>开启</strong></div>
+		<div><a href="https://bbs.dreamz.org/misc.php?do=bbcode#imgcode" target="_blank">[IMG]</a>代码 <strong>开启</strong></div>
+		<div>HTML代码 <strong>关闭</strong></div>
+	</div></td>
+</tr>
+</tbody>
+</table>
+	</td>
+	<td class="smallfont" align="right">
+		<table border="0" cellpadding="0" cellspacing="0">
+		
+		<tbody><tr>
+			<td>
+			<div class="smallfont" style="text-align: left; white-space: nowrap;">
+	<form action="forumdisplay.php" method="get">
+	<input name="s" value="" type="hidden">
+	<input name="daysprune" value="" type="hidden">
+	<strong>论坛跳转</strong><br>
+	<select name="f" onchange="this.form.submit();">
+		<optgroup label="站内区域">
+			<option value="-1">请选择</option>
+			<option value="cp">用户控制面板</option>
+			<option value="pm">悄悄话</option>
+			<option value="subs">订阅</option>
+			<option value="wol">用户在线状态</option>
+			<option value="search">搜索论坛</option>
+			<option value="home">论坛首页</option>
+			<option value="-1">--------------------</option>
+		</optgroup>
+		<optgroup label="论坛">
+		<option value="1" class="fjdpth0"> 【论坛事务与管理】</option>
+<option value="2" class="fjdpth1">&nbsp; &nbsp;  〖意见反馈〗</option>
+<option value="42" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  版主申请存档</option>
+<option value="37" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  DreamLand 守则</option>
+<option value="53" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  声望申述版</option>
+<option value="5" class="fjdpth1">&nbsp; &nbsp;  〖违规回收站〗</option>
+<option value="6" class="fjdpth0"> 【电脑技术】</option>
+<option value="7" class="fjsel" selected="selected">&nbsp; &nbsp;  〖软件使用〗</option>
+<option value="9" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  软件使用精华</option>
+<option value="17" class="fjdpth1">&nbsp; &nbsp;  〖影音技术〗</option>
+<option value="38" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  影音技术精华区</option>
+<option value="11" class="fjdpth1">&nbsp; &nbsp;  〖网络技术〗</option>
+<option value="14" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  网络技术精华</option>
+<option value="49" class="fjdpth1">&nbsp; &nbsp;  〖xNIX与服务器〗</option>
+<option value="50" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  xNIX精华区</option>
+<option value="10" class="fjdpth1">&nbsp; &nbsp;  〖电脑硬件〗</option>
+<option value="51" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  电脑硬件精华区</option>
+<option value="40" class="fjdpth1">&nbsp; &nbsp;  〖程序/开发〗</option>
+<option value="69" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  程序开发精华区</option>
+<option value="12" class="fjdpth1">&nbsp; &nbsp;  〖数码专区〗</option>
+<option value="86" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  数码精华区</option>
+<option value="48" class="fjdpth1">&nbsp; &nbsp;  〖IT新闻〗</option>
+<option value="63" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  热门新闻</option>
+<option value="64" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  最新消息</option>
+<option value="68" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  会员新闻报道</option>
+<option value="18" class="fjdpth0"> 【会员专区】</option>
+<option value="8" class="fjdpth1">&nbsp; &nbsp;  〖软件会员区〗</option>
+<option value="46" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  软件会员区精华</option>
+<option value="19" class="fjdpth1">&nbsp; &nbsp;  〖影视会员区〗</option>
+<option value="27" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  DVDR 介绍区</option>
+<option value="52" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  连续剧介绍区</option>
+<option value="58" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  动漫介绍区</option>
+<option value="45" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  影视讨论精华区</option>
+<option value="23" class="fjdpth1">&nbsp; &nbsp;  〖音乐会员区〗</option>
+<option value="29" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  音乐推荐</option>
+<option value="13" class="fjdpth1">&nbsp; &nbsp;  〖PDA会员区〗</option>
+<option value="88" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  PDA影视</option>
+<option value="62" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  PDA精华区</option>
+<option value="54" class="fjdpth1">&nbsp; &nbsp;  〖游戏玩家〗</option>
+<option value="70" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  WoW</option>
+<option value="87" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  OGame</option>
+<option value="61" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  游戏玩家精华区</option>
+<option value="74" class="fjdpth1">&nbsp; &nbsp;  〖电子书籍〗</option>
+<option value="81" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  电子书籍精华区</option>
+<option value="22" class="fjdpth1">&nbsp; &nbsp;  〖补档交流区〗</option>
+<option value="56" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Archive</option>
+<option value="60" class="fjdpth1">&nbsp; &nbsp;  〖FTP资源〗</option>
+<option value="16" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  普会资源</option>
+<option value="24" class="fjdpth1">&nbsp; &nbsp;  〖交易信息〗</option>
+<option value="84" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  争议协调</option>
+<option value="85" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  身份备案</option>
+<option value="83" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Archive</option>
+<option value="73" class="fjdpth1">&nbsp; &nbsp;  DRL-X</option>
+<option value="75" class="fjdpth0"> 【论坛工作区】</option>
+<option value="72" class="fjdpth1">&nbsp; &nbsp;  DRL-X 讨论</option>
+<option value="28" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  0day warez介绍</option>
+<option value="79" class="fjdpth0"> 【活色生香】</option>
+<option value="25" class="fjdpth1">&nbsp; &nbsp;  〖休闲赏图〗</option>
+<option value="26" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  精华推荐</option>
+<option value="44" class="fjdpth1">&nbsp; &nbsp;  〖原创/摄影〗</option>
+<option value="55" class="fjdpth1">&nbsp; &nbsp;  〖素材区〗</option>
+<option value="15" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  设计求助区</option>
+<option value="78" class="fjdpth1">&nbsp; &nbsp;  〖集图扫图〗</option>
+<option value="80" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  集图精华区</option>
+<option value="20" class="fjdpth0"> 【休闲娱乐】</option>
+<option value="39" class="fjdpth1">&nbsp; &nbsp;  〖人文生活〗</option>
+<option value="71" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  文风轻扬</option>
+<option value="41" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  精华区</option>
+<option value="47" class="fjdpth1">&nbsp; &nbsp;  〖脑筋体操〗</option>
+<option value="21" class="fjdpth1">&nbsp; &nbsp;  〖水上乐园〗</option>
+
+		</optgroup>
+	</select><!-- go button -->
+<input class="button" value="Go" type="submit">
+	</form>
+</div>
+			</td>
+		</tr>		
+		</tbody></table>
+	</td>
+</tr>
+</tbody></table>
+<!-- /forum rules and admin links -->
+
+<br>
+
+
+
+<br>
+
+<div class="smallfont" align="center">所有时间均为GMT +8. 现在时间是 <span class="time">15:59</span></div>
+<div align="center">
+	<div class="smallfont" align="center">
+		© 2004-2005, DreamLand. All rights reserved.<br>
+		pAGE dESiGNEd bY SiXbUSy, Rokey.
+	</div>
+	
+	<div class="smallfont" align="center">
+	<!-- Do not remove  or your scheduled tasks will cease to function -->
+	
+	<!-- Do not remove  or your scheduled tasks will cease to function -->
+	
+	
+	</div>
+</div>
+<br>
+
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- /content area table -->
+
+<form action="index.php" method="get">
+	
+<table class="tborder" align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td><img src="svnfiles/fl.gif" border="0" height="41" width="8"></td>
+	
+		<td class="vbfooter" width="50%">
+			<select name="styleid" id="ressel" onchange="switch_styleid(this)">
+				<optgroup label="快速风格选择">
+					<option value="3" class="" selected="selected">-- DrL sTyLe 2.0</option>
+<option value="2" class="">-- DreamLand</option>
+
+				</optgroup>
+			</select>
+		</td>
+	
+	<td class="vbfooter" align="right" width="100%">
+		<div class="smallfont">
+			<strong>
+				<a href="https://bbs.dreamz.org/x.php">DRL-X</a> -
+				<a href="http://blog.dream4ever.org/" target="_blank">BLOG</a> -
+				<a href="irc://irc.dream4ever.org:+9999/">IRC</a> -
+				<a href="https://bbs.dreamz.org/sendmessage.php">联系我们</a> -
+				
+				
+				<a href="https://bbs.dreamz.org/archive/index.php">文档</a> -
+				<!-- - <a href="">隐私声明</a> - -->
+				<a href="#top" onclick="self.scrollTo(0, 0); return false;">↑</a>
+			</strong>
+		</div>
+	</td>
+<td><img src="svnfiles/fr.gif" border="0" height="41" width="8"></td>
+</tr>
+</tbody></table>
+</form>
+
+
+
+<script type="text/javascript">
+<!--
+	// Main vBulletin Javascript Initialization
+	vBulletin_init();
+//-->
+</script>
+
+<!-- temp -->
+<div style="display: none;">
+	<!-- thread rate -->
+	
+		<!-- thread ratings form here -->
+	
+	<!-- / thread rate -->
+</div>
+
+</td></tr></tbody></table></body></html>

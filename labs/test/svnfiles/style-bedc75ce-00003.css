@@ -1,0 +1,417 @@
+/* vBulletin 3 CSS For Style 'DrL sTyLe 2.0' (styleid: 3) */
+body
+{
+	background-color: #E0E6EC;
+	color: #000000;
+	font: 12px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	margin: 0px 0px 0px 0px;
+	
+}
+a:link
+{
+	color: #565656;
+	text-decoration: none;
+}
+a:visited
+{
+	color: #565656;
+	text-decoration: none;
+}
+a:hover, a:active
+{
+	color: #005EE3;
+	text-decoration: none;
+}
+.page
+{
+	background-color: #E0E6EC;
+	color: #565656;
+}
+.page a:link
+{
+	text-decoration: none;
+}
+.page a:visited
+{
+	text-decoration: none;
+}
+.page a:hover, .page a:active
+{
+	text-decoration: none;
+}
+td, th, p, li
+{
+	font: 12px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.tborder
+{
+	background-color: #8FA0B0;
+	color: #1E375A;
+}
+.tcat
+{
+	background: #768CA3 url(../../images/drl2/cbg.gif);
+	color: #FFFFFF;
+	font: 12px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.tcat a:link
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.tcat a:visited
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.tcat a:hover, .tcat a:active
+{
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+.thead
+{
+	background-color: #D9E2E9;
+	color: #626262;
+	font: 12px verdana, tahoma, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.thead a:link
+{
+	color: #626262;
+	text-decoration: none;
+}
+.thead a:visited
+{
+	color: #626262;
+	text-decoration: none;
+}
+.thead a:hover, .thead a:active
+{
+	color: #005EE3;
+	text-decoration: none;
+}
+.tfoot
+{
+	background: #F0F6FE url(../../images/drl2/cbg.gif) repeat-x top left;
+	color: #ffffff;
+	font-size: 12px;
+}
+.tfoot a:link
+{
+	color: #ffffff;
+	text-decoration: none;
+}
+.tfoot a:visited
+{
+	color: #ffffff;
+	text-decoration: none;
+}
+.tfoot a:hover, .tfoot a:active
+{
+	color: #ffffff;
+	text-decoration: none;
+}
+.alt1, .alt1Active
+{
+	background-color: #EEF1F5;
+	color: #1E375A;
+}
+.alt1 a:link, .alt1Active a:link
+{
+	text-decoration: none;
+}
+.alt1 a:visited, .alt1Active a:visited
+{
+	text-decoration: none;
+}
+.alt1 a:hover, .alt1 a:active, .alt1Active a:hover, .alt1Active a:active
+{
+	text-decoration: underline;
+}
+.alt2, .alt2Active
+{
+	background-color: #EEF1F5;
+	color: #1E375A;
+}
+.alt2 a:link, .alt2Active a:link
+{
+	text-decoration: none;
+}
+.alt2 a:visited, .alt2Active a:visited
+{
+	text-decoration: none;
+}
+.alt2 a:hover, .alt2 a:active, .alt2Active a:hover, .alt2Active a:active
+{
+	text-decoration: underline;
+}
+.alt3
+{
+	background-color: #D5D8E5;
+	color: #000000;
+}
+.wysiwyg
+{
+	background-color: #FFFFFF;
+	color: #1E375A;
+	font: 12px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.wysiwyg a:link
+{
+	text-decoration: none;
+}
+.wysiwyg a:visited
+{
+	text-decoration: none;
+}
+.wysiwyg a:hover, .wysiwyg a:active
+{
+	text-decoration: underline;
+}
+textarea, .bginput
+{
+	font: 12px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	border: 1px dotted #647FA5;
+}
+.button
+{
+	font: 12px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+select
+{
+	font: 12px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+option, optgroup
+{
+	font-size: 12px;
+	font-family: verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.smallfont
+{
+	font: 12px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.time
+{
+	color: #626262;
+}
+.navbar
+{
+	color: #F2F4F6;
+	font: 12px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.navbar a:link
+{
+	color: #f2F4F6;
+}
+.navbar a:visited
+{
+	color: #F2F4F6;
+}
+.navbar a:hover, .navbar a:active
+{
+	color: #F2F4F6;
+}
+.highlight
+{
+	color: #FF0000;
+	font-weight: bold;
+}
+.fjsel
+{
+	background-color: #FFFFFF;
+	color: #1E375A;
+}
+.fjdpth0
+{
+	background-color: #F7F7F7;
+	color: #000000;
+}
+.panel
+{
+	background-color: #EEF1F5;
+	color: #1E375A;
+	padding: 10px;
+	border: 2px outset;
+}
+.panelsurround
+{
+	background-color: #E1E7EC;
+	color: #1E375A;
+}
+legend
+{
+	color: #1E375A;
+	font: 12px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.vbmenu_control
+{
+	background: #DAE9FF url(../../images/drl2/cbg.gif) repeat-x top left;
+	color: #00132D;
+	font: 9pt verdana, tahoma, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	padding: 3px 6px 3px 6px;
+	white-space: nowrap;
+}
+.vbmenu_control a:link
+{
+	color: #00132D;
+	text-decoration: none;
+}
+.vbmenu_control a:visited
+{
+	color: #00132D;
+	text-decoration: none;
+}
+.vbmenu_control a:hover, .vbmenu_control a:active
+{
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+.vbmenu_popup
+{
+	background-color: #94A2B7;
+	color: #1E375A;
+	border: 1px solid #637CA0;
+}
+.vbmenu_option
+{
+	background-color: #EEF1F5;
+	color: #1E375A;
+	font: 9pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	white-space: nowrap;
+	cursor: pointer;
+}
+.vbmenu_option a:link
+{
+	color: #1E375A;
+	text-decoration: none;
+}
+.vbmenu_option a:visited
+{
+	color: #1E375A;
+	text-decoration: none;
+}
+.vbmenu_option a:hover, .vbmenu_option a:active
+{
+	color: #005EE3;
+	text-decoration: none;
+}
+.vbmenu_hilite
+{
+	background-color: #F7FBFF;
+	color: #1E375A;
+	font: 12px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	white-space: nowrap;
+	cursor: pointer;
+}
+.vbmenu_hilite a:link
+{
+	color: #1E375A;
+	text-decoration: none;
+}
+.vbmenu_hilite a:visited
+{
+	color: #1E375A;
+	text-decoration: none;
+}
+.vbmenu_hilite a:hover, .vbmenu_hilite a:active
+{
+	color: #005EE3;
+	text-decoration: none;
+}
+form { display: inline; }
+label { cursor: default; }
+fieldset{border: 1px solid #8FA0B0}
+
+.vbfooter
+{
+	background: transparent url(../../images/drl2/misc/fc.gif) repeat-x top left;
+	color: #ffffff;
+	font: bold 9pt verdana, tahoma, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	padding: 3px 6px 3px 6px;
+	white-space: nowrap;
+}
+.vbfooter a:link
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbfooter a:visited
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbfooter a:hover, .vbmenu_control a:active
+{
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+.vbmenu_header
+{
+	background: transparent url(../../images/drl2/nav_bg.gif) repeat-x top left;
+	color: #00132D;
+	font: bold 9pt verdana, tahoma, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	padding: 3px 6px 3px 6px;
+	white-space: nowrap;
+}
+.vbmenu_header a:link
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_header a:visited
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_header a:hover, .vbmenu_control a:active
+{
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+.sttitle
+{
+	color: #012848;
+	font: 18pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	text-align: center;
+}
+.btcat
+{
+	background: #DAE9FF url(bachviet/bcbg.gif) repeat-x top left;
+	color: #00132D;
+	font: bold 10px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+
+.headpm a:link 
+{
+	color: #00132D;
+	text-decoration: none;
+}
+.headpm a:visited
+{
+	color: #00132D;
+	text-decoration: none;
+}
+.headpm a:hover,
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+/* ***** shell bbcode style ***** */
+.shell { width: 95%; border: 1px solid #909090; padding: 8px; padding-top: 8px; margin: 8px; margin-top: 12pt; text-align: left; background-color: #000000; color: #ffffff; font: 12px lucida console, courier new, lucida grande, sans-serif; }
+.shell a:link
+{
+	color: #00ff00;
+	text-decoration: none;
+}
+.shell a:visited
+{
+	color: #00ff00;
+	text-decoration: none;
+}
+.shell a:hover, .thead a:active
+{
+	color: #00ffff;
+	text-decoration: underline;
+}
+span#hiddenstuff > span.hiddenstuff { display: none; }
+span#hiddenstuff:hover > span.hiddenstuff { display: inline; }
