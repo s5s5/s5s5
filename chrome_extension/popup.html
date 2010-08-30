@@ -10,23 +10,22 @@
 <body id="body">
 <script type="text/javascript">
 function storeUserScribble(id) {
-  var scribble = document.getElementById('scribble').value;
-  localStorage.setItem('userDIYPopup_s5',scribble);
+	var scribble = document.getElementById('scribble').value;
+	localStorage.setItem('userDIYPopup_s5',scribble);
 }
 
 function getUserScribble() {
-  if ( localStorage.getItem('userDIYPopup_s5')) {
-    var scribble = localStorage.getItem('userDIYPopup_s5');
-  }
-  else {
-    var scribble = 'http://开头，回车提交。';
-  }
-  document.getElementById('scribble').value = scribble;
-  document.getElementById('ifrsrc').src = scribble;
+	if ( localStorage.getItem('userDIYPopup_s5')) {
+		var scribble = localStorage.getItem('userDIYPopup_s5');
+	} else {
+		var scribble = 'help.html';
+	}
+	document.getElementById('scribble').value = scribble;
+	document.getElementById('ifrsrc').src = scribble;
 }
 </script>
 <iframe id="ifrsrc" width="1000" height="3000" scrolling="no" frameborder="0" style="position:relative; z-index:1;"></iframe>
-<input type="text" id="scribble" onkeyup="storeUserScribble(this.id)" onChange="getUserScribble()" style="border:#000 solid 2px; font-weight:bold; position:fixed; bottom:0; right:0; z-index:9; padding:2px; color:#900;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;">
+<div style="position:fixed; bottom:0; right:0; z-index:9;">输入网址：<input type="text" id="scribble" onkeyup="storeUserScribble(this.id)" onChange="getUserScribble()" onFocus="this.value='http://'" onBlur="this.value='输入网址后请按回车'" style="border:#000 solid 2px; font-weight:bold; padding:2px; color:#900;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;"></div>
 <script>
 getUserScribble();
 </script>
