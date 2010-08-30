@@ -2,16 +2,33 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>家园守卫战</title> 
+<title>自定义小窗口</title> 
 <style>
-*{margin:0; padding:0; border:0; overflow-x:hidden;}
+*{margin:0; padding:0; border:0;}
 </style>
 </head>
 <body id="body">
-<iframe src="http://main.homeland.qzoneapp.com/xiaoyou/index.php?openid=00000000000000000000000000002DE0&openkey=16BF3356957881B60B975FF2FA4D40FEAC77425396EBB73A" width="1000" height="950" scrolling="no" frameborder="0" style="margin-left:10px;"></iframe>
+<script type="text/javascript">
+function storeUserScribble(id) {
+  var scribble = document.getElementById('scribble').value;
+  localStorage.setItem('userDIYPopup_s5',scribble);
+}
+
+function getUserScribble() {
+  if ( localStorage.getItem('userDIYPopup_s5')) {
+    var scribble = localStorage.getItem('userDIYPopup_s5');
+  }
+  else {
+    var scribble = 'http://开头，回车提交。';
+  }
+  document.getElementById('scribble').value = scribble;
+  document.getElementById('ifrsrc').src = scribble;
+}
+</script>
+<iframe id="ifrsrc" width="1000" height="3000" scrolling="no" frameborder="0" style="position:relative; z-index:1;"></iframe>
+<input type="text" id="scribble" onkeyup="storeUserScribble(this.id)" onChange="getUserScribble()" style="border:#000 solid 2px; font-weight:bold; position:fixed; bottom:0; right:0; z-index:9; padding:2px; color:#900;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;">
 <script>
-var obj = document.getElementById("body");
-obj.scrollTop=60;
+getUserScribble();
 </script>
 </body>
 </html>
