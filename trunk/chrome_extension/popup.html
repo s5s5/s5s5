@@ -4,10 +4,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>自定义小窗口</title> 
 <style>
-*{margin:0; padding:0; border:0;}
+*{margin:0; padding:0; border:0; overflow:hidden; font-family:'微软雅黑','Microsoft YaHei',Helvetica,Arial;}
 </style>
 </head>
-<body id="body">
+<body>
 <script type="text/javascript">
 function storeUserScribble(id) {
 	var scribble = document.getElementById('scribble').value;
@@ -18,14 +18,14 @@ function getUserScribble() {
 	if ( localStorage.getItem('userDIYPopup_s5')) {
 		var scribble = localStorage.getItem('userDIYPopup_s5');
 	} else {
-		var scribble = 'help.html';
+		var scribble = '输入网址后请按回车.html';
 	}
 	document.getElementById('scribble').value = scribble;
 	document.getElementById('ifrsrc').src = scribble;
 }
 </script>
-<iframe id="ifrsrc" width="1000" height="3000" scrolling="no" frameborder="0" style="position:relative; z-index:1;"></iframe>
-<div style="position:fixed; bottom:0; right:0; z-index:9;">输入网址：<input type="text" id="scribble" onkeyup="storeUserScribble(this.id)" onChange="getUserScribble()" onFocus="this.value='http://'" onBlur="this.value='输入网址后请按回车'" style="border:#000 solid 2px; font-weight:bold; padding:2px; color:#900;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;"></div>
+<iframe id="ifrsrc" width="800" height="600" scrolling="auto" frameborder="0" style="position:relative; z-index:1;"></iframe>
+<div style="position:fixed; bottom:17px; right:17px; z-index:9; color:#900; text-shadow:0 0 6px #000; font-weight:bold;" class="box">输入网址：<input type="text" id="scribble" onkeyup="storeUserScribble(this.id)" onChange="getUserScribble()" onFocus="this.value='http://'" onBlur="this.value='输入网址后请按回车'" style="border:#000 solid 2px; font-weight:bold; padding:2px; color:#900;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;"></div>
 <script>
 getUserScribble();
 </script>
