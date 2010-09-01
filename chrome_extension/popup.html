@@ -18,9 +18,13 @@ function getUserScribble() {
 	if ( localStorage.getItem('userDIYPopup_s5')) {
 		var scribble = localStorage.getItem('userDIYPopup_s5');
 	} else {
-		var scribble = '输入网址后请按回车.html';
+		var scribble = 'wel.html';
 	}
-	document.getElementById('scribble').value = scribble;
+	if (scribble == 'wel.html'){
+		document.getElementById('scribble').value = '输入网址后请按回车';
+	}else{
+		document.getElementById('scribble').value = scribble;
+	}
 	document.getElementById('ifrsrc').src = scribble;
 }
 </script>
