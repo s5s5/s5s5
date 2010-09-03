@@ -5,9 +5,52 @@
 <title>自定义小窗口</title> 
 <style>
 *{margin:0; padding:0; border:0; overflow:hidden; font-family:'微软雅黑','Microsoft YaHei',Helvetica,Arial;}
+#loading{position:fixed; top:10px; left:10px; background-color:#900; color:#FFF; padding:1px 5px; z-index:99999; border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;}
+.showload{display:block;
+-webkit-animation-name: bounce;
+-webkit-animation-duration: 0.5s;
+-webkit-animation-iteration-count: 7;
+-webkit-animation-direction: alternate;
+}
+@-webkit-keyframes bounce {
+	from {
+		top:10px;
+		left: 10px;
+		-webkit-animation-timing-function: ease-out;
+	}
+	10% {
+		top:9px;
+		left: 40px;
+		-webkit-animation-timing-function: ease-out;
+	}
+	20% {
+		top:11px;
+		left: 5px;
+		-webkit-animation-timing-function: ease-out;
+	}
+	50% {
+		top:9px;
+		left: 100px;
+		-webkit-animation-timing-function: ease-out;
+	}
+	70% {
+		top:11px;
+		left: 5px;
+		-webkit-animation-timing-function: ease-out;
+	}
+	80% {
+		top:9px;
+		left: 15px;
+		-webkit-animation-timing-function: ease-out;
+	}
+	to {
+		top:10px;
+		left: 10px;
+		-webkit-animation-timing-function: ease-out;
+	}
+}
+.hideload{display:none;}
 </style>
-</head>
-<body>
 <script type="text/javascript">
 function storeUserScribble(id) {
 	var scribble = document.getElementById('scribble').value;
@@ -26,10 +69,22 @@ function getUserScribble() {
 		document.getElementById('scribble').value = scribble;
 	}
 	document.getElementById('ifrsrc').src = scribble;
+	showload();
+}
+function showload(){
+	var loading = document.getElementById('loading');
+	loading.className="showload"
+	setTimeout("hideload()",3210);
+}
+function hideload(){
+	loading.className="hideload"
 }
 </script>
+</head>
+<body onLoad="showload()">
 <iframe id="ifrsrc" width="800" height="600" scrolling="auto" frameborder="0" style="position:relative; z-index:1;"></iframe>
-<div style="position:fixed; bottom:17px; right:17px; z-index:9; color:#900; text-shadow:0 0 6px #000; font-weight:bold;" class="box">输入网址：<input type="text" id="scribble" onkeyup="storeUserScribble(this.id)" onChange="getUserScribble()" onFocus="this.value='http://'" onBlur="this.value='输入网址后请按回车'" style="border:#000 solid 2px; font-weight:bold; padding:2px; color:#900;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;"></div>
+<div style="position:fixed; bottom:17px; right:17px; z-index:9; color:#900; text-shadow:0 0 6px #000; font-weight:bold;" class="box">输入网址：<input type="text" id="scribble" onkeyup="storeUserScribble(this.id);" onChange="getUserScribble();" onFocus="this.value='http://'" onBlur="this.value='输入网址后请按回车'" style="border:#000 solid 2px; font-weight:bold; padding:2px; color:#900;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;"></div>
+<div id="loading">㊗㊒㊖ 正在加载…</div>
 <script>
 getUserScribble();
 </script>
