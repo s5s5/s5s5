@@ -1,6 +1,7 @@
 {
 	"name": "自定义小窗口（DIY Popup）",
 	"description": "在Chrome地址栏右侧生成一个图标，点击该图标后的小窗口中显示一个网页，您可以输入网址来控制显示什么网页。",
+	"background_page": "background.html",
 	"browser_action": {
 		"default_icon": "icon.png",
 		"default_title": "自定义小窗口（DIY Popup）",
@@ -11,5 +12,5 @@
 		"48": "icon48.png",
 		"128": "icon128.png"
 	},
-	"version": "1.4"
+	"version": "1.5"
 }
