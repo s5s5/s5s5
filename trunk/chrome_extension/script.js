@@ -43,6 +43,8 @@ function showload(){
 	var loading = document.getElementById('loading');
 	loading.className="showload"
 	setTimeout("hideload()",3210);
+	localStorage.setItem('bgs_s5','0');
+	document.getElementById('bgrunsave').checked = localStorage.getItem('bgs_s5') == '1';
 }
 function hideload(){
 	loading.className="hideload"
