@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Config>
+    <Instagram>
+        <Endpoint timeout="10">https://api.instagram.com</Endpoint>
+        <Version>v1</Version>
+        <ClientId></ClientId>
+        <ClientSecret></ClientSecret>
+        <Scope>comments+likes+relationships</Scope>
+        <OAuthPath>/oauth/authorize/?client_id=b89a5a1746d44995b305a32805f1065b&amp;response_type=code&amp;redirect_uri=http://t.s5s5.me</OAuthPath>
+        <OAuthTokenPath>/oauth/access_token/</OAuthTokenPath>
+    </Instagram>
+    <Instaphp>
+        <RedirectUri></RedirectUri>
+        <CACertBundlePath></CACertBundlePath>
+    </Instaphp>
+</Config>
