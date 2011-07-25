@@ -1,3 +1,7 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+# Filename : ex2.py
+
 # A commet, this is so you can read your program later.
 # Anything after the # is ignored by python.
 
