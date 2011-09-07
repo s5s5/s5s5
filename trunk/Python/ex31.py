@@ -9,9 +9,9 @@ if door == "1":
     print "There's a giant bear here eating a cheese cake.  What do you do?"
     print "1. Take the cake."
     print "2. Scream at the bear."
-    
+
     bear = raw_input("> ")
-    
+
     if bear == "1":
         print "The bear eats your face off.  Good job!"
     elif bear == "2":
@@ -24,9 +24,9 @@ elif door == "2":
     print "1. Blueberries."
     print "2. Yellow jacket clothespins."
     print "3. Understanding revolvers yelling melodies."
-    
-    issanity = raw_input("> ")
-    
+
+    insanity = raw_input("> ")
+
     if insanity == "1" or insanity == "2":
         print "You body survives powered by a mind of jello.  Good job!"
     else:
