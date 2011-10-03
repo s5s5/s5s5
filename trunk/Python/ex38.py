@@ -11,7 +11,7 @@ import time
 
 def get_music_json():
     # 抓取json并写入临时txt
-    url = 'http://douban.fm/j/mine/playlist?type=n&amp;channel=1'   # 定义json地址
+    url = 'http://douban.fm/j/mine/playlist?type=n&channel=1'   # 定义json地址
     music_json = urllib.urlopen(url)    # urllib去抓json回来
     base_json = json.load(music_json)   # json把json解析
     output = open('tempfje_-83838399wfjefie.txt', 'a')  # 增量写入txt
