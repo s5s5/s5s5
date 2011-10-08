@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 # Filename : ex37.py
 # http://s5s5.me
-# 抓取豆瓣fm华语频道音乐列表
+# 下载豆瓣fm华语频道MP3
 
 import os
 import urllib
@@ -11,7 +11,7 @@ import time
 
 def get_mp3():
     cwd = os.getcwd()
-    downdir = cwd+os.sep+'Music_'
+    downdir = cwd + os.sep + 'Music_'
     print '\n下载目录为：', downdir, '\n'
     if not os.path.isdir(downdir):
         print '下载目录不存在，正在创建目录：', downdir
@@ -41,6 +41,6 @@ def main():
         get_mp3()
         print i     # 显示一下进度
         time.sleep(1)   # 延时1秒去抓，抓太快会被封IP
-    print '抓取豆瓣fm华语频道音乐列表完成'
+    print '下载豆瓣fm华语频道MP3完成'
 
 main()
