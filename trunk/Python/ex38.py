@@ -4,15 +4,15 @@
 # 抓取豆瓣fm华语频道音乐列表
 
 import os
-import urllib
+import urllib2
 import json
 import time
 
 
 def get_music_json():
     # 抓取json并写入临时txt
-    url = 'http://douban.fm/j/mine/playlist?type=n&channel=1'   # 定义json地址
-    music_json = urllib.urlopen(url)    # urllib去抓json回来
+    url = 'http://douban.fm/j/mine/playlist?type=n&h=&channel=1&from=mainsite&r=a17847251d'   # 定义json地址
+    music_json = urllib2.urlopen(url)    # urllib去抓json回来
     base_json = json.load(music_json)   # json把json解析
     output = open('tempfje_-83838399wfjefie.txt', 'a')  # 增量写入txt
     for i in base_json['song']:     # 找到json中的相关元素
@@ -25,7 +25,7 @@ def get_music_json():
 def no_repeat():
     # 对临时txt去重并排序
     read_txt = file('tempfje_-83838399wfjefie.txt', 'r')    # 读临时txt
-    write_txt = file('songlist.txt', 'w')   # 要写入的txt
+    write_txt = file('欧美.txt', 'w')   # 要写入的txt
     s = set()   # 用set去重
     for i in read_txt:  # 把txt写到set过的变量中
         s.add(i)
@@ -38,10 +38,10 @@ def no_repeat():
 
 
 def main():
-    for i in range(0, 100):   # 抓它100次，因为每条json只有10首歌左右
+    for i in range(0, 1000):   # 抓它100次，因为每条json只有10首歌左右
         get_music_json()
         print i     # 显示一下进度
-        time.sleep(1)   # 延时1秒去抓，抓太快会被封IP
+        time.sleep(2)   # 延时1秒去抓，抓太快会被封IP
     no_repeat()     # 去重排序
     print '抓取豆瓣fm华语频道音乐列表完成'
 
